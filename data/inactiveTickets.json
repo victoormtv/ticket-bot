@@ -1,0 +1,124 @@
+{
+  "tickets": {
+    "1450909955509981218": {
+      "lastActivity": 1766103589166,
+      "warningGiven": true,
+      "closed": true,
+      "closedAt": 1766192400010
+    },
+    "1450964460788514818": {
+      "lastActivity": 1766194613041,
+      "warningGiven": false,
+      "closed": false,
+      "closedAt": null
+    },
+    "1450976514991456572": {
+      "lastActivity": 1766099258975,
+      "warningGiven": true,
+      "closed": true,
+      "closedAt": 1766188800014
+    },
+    "1451020547893891265": {
+      "lastActivity": 1766023174817,
+      "warningGiven": true,
+      "closed": true,
+      "closedAt": 1766109600009
+    },
+    "1451084347401699380": {
+      "lastActivity": 1766174031352,
+      "warningGiven": false,
+      "closed": false,
+      "closedAt": null
+    },
+    "1451129234176217242": {
+      "lastActivity": 1766075642144,
+      "warningGiven": true,
+      "closed": true,
+      "closedAt": 1766163600009
+    },
+    "1451240531999985895": {
+      "lastActivity": 1766157053671,
+      "warningGiven": false,
+      "closed": false,
+      "closedAt": null
+    },
+    "1451255208574456019": {
+      "lastActivity": 1766091992934,
+      "warningGiven": true,
+      "closed": true,
+      "closedAt": 1766181600008
+    },
+    "1451289936463397028": {
+      "lastActivity": 1766085923973,
+      "warningGiven": true,
+      "closed": true,
+      "closedAt": 1766174400008
+    },
+    "1451335819699683348": {
+      "lastActivity": 1766097204795,
+      "warningGiven": true,
+      "closed": true,
+      "closedAt": 1766185200008
+    },
+    "1451337680720887869": {
+      "lastActivity": 1766102534496,
+      "warningGiven": true,
+      "closed": true,
+      "closedAt": 1766192400010
+    },
+    "1451339250003087515": {
+      "lastActivity": 1766098195689,
+      "warningGiven": true,
+      "closed": true,
+      "closedAt": 1766185200008
+    },
+    "1451339801637818575": {
+      "lastActivity": 1766097168536,
+      "warningGiven": true,
+      "closed": true,
+      "closedAt": 1766185200008
+    },
+    "1451346466164572493": {
+      "lastActivity": 1766190903971,
+      "warningGiven": false,
+      "closed": false,
+      "closedAt": null
+    },
+    "1451347518850863117": {
+      "lastActivity": 1766102290666,
+      "warningGiven": true,
+      "closed": true,
+      "closedAt": 1766188800014
+    },
+    "1451383361657372824": {
+      "lastActivity": 1766107290810,
+      "warningGiven": true,
+      "closed": false,
+      "closedAt": null
+    },
+    "1451422020523917372": {
+      "lastActivity": 1766168550310,
+      "warningGiven": false,
+      "closed": false,
+      "closedAt": null
+    },
+    "1451604079162687592": {
+      "lastActivity": 1766159950479,
+      "warningGiven": false,
+      "closed": false,
+      "closedAt": null
+    },
+    "1451620311119429763": {
+      "lastActivity": 1766167051619,
+      "warningGiven": false,
+      "closed": false,
+      "closedAt": null
+    },
+    "1451684702883938514": {
+      "lastActivity": 1766179162504,
+      "warningGiven": false,
+      "closed": false,
+      "closedAt": null
+    }
+  }
+}
