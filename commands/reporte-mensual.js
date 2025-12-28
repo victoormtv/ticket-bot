@@ -39,7 +39,7 @@ module.exports = {
 
         if (!isAdmin) {
             return await interaction.reply({
-                content: '❌ Solo los Admins pueden generar reportes.',
+                content: '❌ Solo los admins pueden generar reportes.',
                 ephemeral: true
             });
         }

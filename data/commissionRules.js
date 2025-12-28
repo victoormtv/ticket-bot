@@ -49,6 +49,21 @@ const commissionRules = {
     'Aimbot Body iOS': {
         'Por Temporada': { venta: 20, soporte: 15, moneda: 'Soles', precioEstandar: 200 }
     },
+    'Panel Android': {
+        'Semanal': { venta: 10, soporte: 10, moneda: 'Soles', precioEstandar: 35 },
+        '14 dias': { venta: 15, soporte: 10, moneda: 'Soles', precioEstandar: 60 },
+        'Mensual': { venta: 20, soporte: 10, moneda: 'Soles', precioEstandar: 100 },
+        '60 dias': { venta: 30, soporte: 10, moneda: 'Soles', precioEstandar: 150 },
+    },
+    'Panel COD iOS': {
+        '1 dia': { venta: 5, soporte: 10, moneda: 'Soles', precioEstandar: 55 },
+        '14 dias': { venta: 8, soporte: 10, moneda: 'Soles', precioEstandar: 100 },
+        'Mensual': { venta: 10, soporte: 10, moneda: 'Soles', precioEstandar: 180 }
+    },
+    'Panel CSGO': {
+        'Semanal': { venta: 15, soporte: 10, moneda: 'Soles', precioEstandar: 100 },
+        'Mensual': { venta: 25, soporte: 10, moneda: 'Soles', precioEstandar: 170 }
+    },
     'Aimlock': {
         'Anual': { venta: 25, soporte: 15, moneda: 'Soles', precioEstandar: 180 }
     },
@@ -120,7 +135,31 @@ const comisionesMetodoPago = {
         fijo: 0, 
         moneda: 'USD' 
     },
-    'Yape/Plin': { porcentaje: 0, fijo: 0, moneda: 'PEN' },
+    'Prex Uruguay': { 
+        porcentaje: 0, 
+        fijo: 0, 
+        moneda: 'UYU' 
+    },
+    'Banrural Guatemala': { 
+        porcentaje: 0, 
+        fijo: 0, 
+        moneda: 'GTQ' 
+    },
+    'Banco Pichincha': { 
+        porcentaje: 0, 
+        fijo: 0, 
+        moneda: 'USD' 
+    },
+    'Bizum España': { 
+        porcentaje: 0, 
+        fijo: 0, 
+        moneda: 'EUR' 
+    },
+    'Yape/Plin': { 
+        porcentaje: 0, 
+        fijo: 0, 
+        moneda: 'PEN' 
+    },
     'BCP Soles': { porcentaje: 0, fijo: 0, moneda: 'PEN' },
     'Interbank Soles': { porcentaje: 0, fijo: 0, moneda: 'PEN' },
     'Interbank Dolares': { porcentaje: 0, fijo: 0, moneda: 'USD' },
@@ -133,6 +172,7 @@ const comisionesMetodoPago = {
     'Clabe Nubank': { porcentaje: 0, fijo: 0, moneda: 'MXN' },
     'CBU Mercado Pago': { porcentaje: 0, fijo: 0, moneda: 'ARS' },
     'Banco Guayaquil': { porcentaje: 0, fijo: 0, moneda: 'USD' },
+    'Banco Estado': { porcentaje: 0, fijo: 0, moneda: 'CLP' },
     'BanReserva': { porcentaje: 0, fijo: 0, moneda: 'DOP' },
     'otro': { porcentaje: 0, fijo: 0, moneda: 'PEN' }
 };

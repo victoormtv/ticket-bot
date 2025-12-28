@@ -116,7 +116,7 @@ async function checkInactiveTickets(client) {
         
         const closeEmbed = new EmbedBuilder()
           .setTitle('> HyperV - Ticket Cerrado Automáticamente')
-          .setDescription('⏰ Este ticket ha sido cerrado automáticamente por inactividad (24 horas sin mensajes).\n\n**El canal será eliminado en 48 horas.**\n\nSi necesitas ayuda nuevamente, crea un nuevo ticket.')
+          .setDescription('⏰ Este ticket ha sido cerrado automáticamente por inactividad (24 horas sin mensajes).\n\n**El canal será eliminado en 24 horas.**\n\nSi necesitas ayuda nuevamente, crea un nuevo ticket.')
           .setColor(0xFF0000)
           .setFooter(config.embedFooter)
           .setTimestamp();

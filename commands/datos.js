@@ -96,8 +96,8 @@ module.exports = {
                 .setDescription('BanReserva Rep. Dominicana'))
         .addSubcommand(subcommand =>
             subcommand
-                .setName('bolivia-bancounion')
-                .setDescription('Banco Unión Bolivia'))
+                .setName('bolivia-bancosol')
+                .setDescription('Banco Sol Bolivia'))
         .addSubcommand(subcommand =>
             subcommand
                 .setName('uruguay-prex')
@@ -141,7 +141,7 @@ module.exports = {
             'guatemala-banrural': 'banrural',
             'ecuador-pichincha': 'pichincha',
             'republicadominicana-banreserva': 'banreserva',
-            'bolivia-bancounion': 'bancounion',
+            'bolivia-sol': 'bancosol',
             'uruguay-prex': 'prex'
         };
 

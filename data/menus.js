@@ -18,6 +18,18 @@ module.exports = {
         { label: 'Adquirir un Producto', emoji: '<:compra:1316171968717918379>', description: 'Realiza una compra', value: 'compra-ticket' }
     ], 'Selecciona una opción'),
 
+    menuPanelPCGratis: createMenu([
+        { label: 'Pide tu Panel aqui', emoji: '<:compra:1316171968717918379>', description: 'Abre ticket', value: 'compra-panel' }
+    ], 'Selecciona un plan'),
+
+    menuBypassGratis: createMenu([
+        { label: 'Pide tu Bypass aqui',  emoji: '<:compra:1316171968717918379>', description: 'Abre ticket', value: 'compra-bypass' }
+    ], 'Selecciona un plan'),
+
+    menuPromociones: createMenu([
+        { label: '20% de descuento ahora!', description: 'Abre ticket', value: 'promociones' }
+    ], 'Reclama tu 20% OFF'),
+
     menuPanelFull: createMenu([
         { label: 'Panel Full Semanal', description: 'Precio: $ 25.00 | S/. 60.00', value: 'panel-full-semanal' },
         { label: 'Panel Full Mensual', description: 'Precio: $ 40.00 | S/. 110.00', value: 'panel-full-mensual' },
@@ -36,7 +48,7 @@ module.exports = {
         { label: 'Bypass ID Semanal', description: 'Precio: $ 10.00 | S/. 40.00', value: 'bypass-id-semanal' },
         { label: 'Bypass ID 14 días', description: 'Precio: $ 20.00 | S/. 70.00', value: 'bypass-id-catorce-dias' },
         { label: 'Bypass ID 30 días', description: 'Precio: $ 30.00 | S/. 100.00', value: 'bypass-id-mensual' },
-        { label: 'Bypass ID 60 días', description: 'Precio: $ 45.00 | S/. 150.00', value: 'bypass-id-sesenta-dias' }
+        { label: 'Bypass ID 60 días', description: 'Precio: $ 45.00 | S/. 150.00', value: 'bypass-id-60-dias' }
     ], 'Selecciona un plan'),
 
     menuPanelOnlyAimbot: createMenu([
@@ -71,10 +83,10 @@ module.exports = {
     ], 'Selecciona un plan'),
 
     menuPanelAndroid: createMenu([
-        { label: 'Panel Android Semanal', description: 'Precio: $ 15.00 | S/. 60.00', value: 'panel-android-semanal' },
-        { label: 'Panel Android Mensual', description: 'Precio: $ 35.00 | S/. 130.00', value: 'panel-android-mensual' },
-        { label: 'Panel Android Trimestral', description: 'Precio: $ 50.00 | S/. 150.00', value: 'panel-android-trimestral' },
-        { label: 'Panel Android Anual', description: 'Precio: $ 60.00 | S/. 200.00', value: 'panel-android-anual' }
+        { label: 'Panel Android Semanal', description: 'Precio: $ 10.00 | S/. 35.00', value: 'panel-android-semanal' },
+        { label: 'Panel Android 14 días', description: 'Precio: $ 17.00 | S/. 60.00', value: 'panel-android-14-dias' },
+        { label: 'Panel Android Mensual', description: 'Precio: $ 30.00 | S/. 100.00', value: 'panel-android-mensual' },
+        { label: 'Panel Android 60 días', description: 'Precio: $ 45.00 | S/. 150.00', value: 'panel-android-60-dias' }
     ], 'Selecciona un plan'),
 
      menuAimlock: createMenu([
@@ -86,7 +98,7 @@ module.exports = {
         { label: 'Regedit Anual', description: 'Precio: $ 35.00 | S/. 130.00', value: 'Regedit-anual' }
     ], 'Selecciona un plan'),
 
-     menuPanelAimbotColor: createMenu([
+    menuPanelAimbotColor: createMenu([
         { label: 'Aimbot Color Mensual', description: 'Precio: $ 25.00 | S/. 90.00', value: 'aimbot-color-mensual' },
         { label: 'Aimbot Color Trimestral', description: 'Precio: $ 50.00 | S/. 180.00', value: 'aimbot-color-trimestral' },
         { label: 'Aimbot Color Anual', description: 'Precio: $ 90.00 | S/. 300.00', value: 'aimbot-color-anual' }
@@ -100,7 +112,18 @@ module.exports = {
         { label: 'Boost Rank', emoji: '<:HyperVZeus1:1326269368291688479>', description: 'Consulta tu rango a preferencia', value: 'boost-rank' }
     ], 'Selecciona tu opción'),
 
-     menuPanelWarzone: createMenu([
+    menuPanelCSGO: createMenu([
+        { label: 'Panel CSGO Semanal', description: 'Precio: $ 20.00 | S/. 70.00', value: 'panel-csgo-semanal' },
+        { label: 'Panel CSGO Mensual', description: 'Precio: $ 45.00 | S/. 160.00', value: 'panel-csgo-mensual' }
+    ], 'Selecciona un plan'),
+
+    menuPanelCODIOS: createMenu([
+        { label: 'Panel COD iOS 1 día', description: 'Precio: $ 15.00 | S/. 50.00', value: 'panel-cod-1-dia' },
+        { label: 'Panel COD iOS Semanal', description: 'Precio: $ 30.00 | S/. 100.00', value: 'panel-cod-semanal' },
+        { label: 'Panel COD iOS Mensual', description: 'Precio: $ 50.00 | S/. 170.00', value: 'panel-cod-mensual' }
+    ], 'Selecciona un plan'),
+
+    menuPanelWarzone: createMenu([
         { label: 'Panel Warzone 15 días', description: 'Precio: $ 30.00 | S/. 110.00', value: 'panel-warzone-quince-dias' },
         { label: 'Panel Warzone 30 días', description: 'Precio: $ 65.00 | S/. 200.00', value: 'panel-warzone-treinta-dias' }
     ], 'Selecciona un plan'),

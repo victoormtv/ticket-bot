@@ -12,7 +12,7 @@ module.exports = [
         embed: new EmbedBuilder()
             .setTitle('> Ticket General') // ticket general
             .setDescription(
-                "<:HyperVZeus1:1326269368291688479> **Instrucciones para Abrir un Ticket**\n\n" +
+                "<:zeusaa:1433927475976474624> **Instrucciones para Abrir un Ticket**\n\n" +
                 "Para facilitar la realización de una compra o para hacer una consulta relacionada con el producto, te invitamos a abrir un ticket. Este proceso nos permitirá atender tus necesidades de manera más eficiente y brindarte la asistencia adecuada. \n\n" +
                 "Asegúrate de incluir todos los detalles relevantes en tu solicitud para que podamos ayudarte de la mejor manera posible. ¡Estamos aquí para ayudarte!\n\n" +
                 "<a:1_:1157447561339215963> Elige un producto en nuestras categorías de la HyperV Shop.\n" +
@@ -39,6 +39,48 @@ module.exports = [
             .setFooter(config.embedFooter)
             .setImage(config.defaultImage),
         menu: menus.menuTicketGeneral
+    },
+
+    {
+        id: ids.embeds.PANEL_PC_GRATIS, // PANEL PC GRATIS
+        messageId: '1454537225525268594',
+        embed: new EmbedBuilder()
+            .setTitle('> HyperV - Panel PC Gratis')
+            .setDescription(liston +
+                "<:zeusaa:1433927475976474624> [`Click aqui para visualizar el tutorial, acceder a los requerimientos y el loader.`](https://hyperv.gitbook.io/panel-gratis/)\n\n" +
+                "__**DETALLES:**__\n" +
+                "`- Soporte Windows: 8/10/11`\n" +
+                "`- Soporte CPU: Intel/AMD/Xeon`\n" +
+                "`- Soporte Idiomas: Inglés/Español/Portugués`\n" +
+                "`- Compatibilidad: Emuladores 32 bits y 64 bits`\n\n" +
+                "> **Grupo de Ventas en WhatsApp:** [`Click aqui`](https://chat.whatsapp.com/DSjbG1vp4hnA6EaLRpeCQj)\n\n" +
+                "**<:compra:1316171968717918379> Si deseas adquirir algún plan de paga o recurrir algun soporte gratuito, abre ticket en la parte inferior del mensaje.**")
+            .setColor(config.embedColor)
+            .setTimestamp()
+            .setFooter(config.embedFooter)
+            .setImage('https://i.ibb.co/XZgxG2J9/PANEL-GRATIS-HYPER.webp'),
+        menu: menus.menuPanelPCGratis
+    },
+
+        {
+        id: ids.embeds.BYPASS_GRATIS, // BYPASS UID GRATIS
+        messageId: '1454537226397683753',
+        embed: new EmbedBuilder()
+            .setTitle('> HyperV - Bypass UID Gratis')
+            .setDescription(liston +
+                "<:zeusaa:1433927475976474624> [`Click aqui para visualizar el tutorial, acceder a los requerimientos y el loader.`](https://hyperv.gitbook.io/panel-gratis/)\n\n" +
+                "__**DETALLES:**__\n" +
+                "`- Soporte Windows: 8/10/11`\n" +
+                "`- Soporte CPU: Intel/AMD/Xeon`\n" +
+                "`- Soporte Idiomas: Inglés/Español/Portugués`\n" +
+                "`- Compatibilidad: Emuladores 32 bits y 64 bits`\n\n" +
+                "> **Grupo de Ventas en WhatsApp:** [`Click aqui`](https://chat.whatsapp.com/DSjbG1vp4hnA6EaLRpeCQj)\n\n" +
+                "**<:compra:1316171968717918379> Si deseas adquirir algún plan de paga o recurrir algun soporte gratuito, abre ticket en la parte inferior del mensaje.**")
+            .setColor(config.embedColor)
+            .setFooter(config.embedFooter)
+            .setTimestamp()
+            .setImage('https://i.ibb.co/gFv8V70j/BYPASS-UID-MINIATURA-HYPER-V.png'),
+        menu: menus.menuBypassGratis
     },
 
     {
@@ -254,6 +296,32 @@ module.exports = [
             .setImage('https://i.ibb.co/fY5MmBNq/AIMBOT-IOS-BODY-1.png'),
         menu: menus.menuAimbotBodyIOS
     },
+
+        {
+        id: ids.embeds.PANEL_ANDROID, // panel android
+        messageId: '1454537233662087323',
+        embed: new EmbedBuilder()
+            .setTitle('> HyperV - Panel Android')
+            .setDescription(
+                "<a:spain:1117992165470122064> Nuestro nuevo panel Android no solo te permitirá acceder a todas las funciones de AIM y visuales, sino que también transformará tu experiencia de juego. Con una interfaz intuitiva y fácil de usar, podrás personalizar cada aspecto para adaptarlo a tu estilo de juego.\n" +
+                "Con nuestro panel, no solo aumentarás tus posibilidades de victoria, sino que también disfrutarás de una experiencia de juego más óptima y emocionante. ¡Prepárate para dominar tus partidas!\n\n" +
+                "__**DETALLES:**__\n" +
+                "`- Soporte Sistema: Android`\n" +
+                "`- Soporte Versión del sistema: Todas`\n" +
+                "`- Soporte Idiomas: Inglés/Español/Portugués`\n\n" +
+                liston +
+                ":flag_us: Our new Android dashboard will not only give you access to all the AIM and visual features, but it will also transform your gaming experience. With an intuitive and easy-to-use interface, you can customize every aspect to suit your play style.\n" +
+                "With our panel, you'll not only increase your chances of winning, but you'll also enjoy a more optimal and exciting gaming experience. Get ready to dominate your games!\n\n" +
+                "__**DETAILS:**__\n" +
+                "`- Support System: Android`\n" +
+                "`- Support System version: All`\n" +
+                "`- Support Idioms: English/Spanish/Portugués`"
+            )
+            .setColor(config.embedColor)
+            .setFooter(config.embedFooter)
+            .setImage('https://i.ibb.co/pBghmn0M/PANEL-ANDROID-1.png'),
+        menu: menus.menuPanelAndroid
+    },
     
     {
         id: ids.embeds.AIMLOCK,
@@ -288,8 +356,8 @@ module.exports = [
             .setDescription(
                 "<a:spain:1117992165470122064> Nuestro regedit te ofrece corregir la mira perfectamente, ahorrándote así largas horas probando nuevas configuraciones que nunca te funcionan, de esta manera llevarás tu jugabilidad al siguiente nivel!\n\n" +
                 "__**DETALLES:**__\n" +
-                "`- Soporte Sistema: Android and iOS`\n" +
-                "`- Soporte CPU: Todos compatibles`\n" +
+                "`- Soporte Sistema: Android`\n" +
+                "`- Soporte Versión del sistema: Todas`\n" +
                 "`- Soporte Idiomas: Inglés/Español/Portugués`\n\n" +
                 liston +
                 ":flag_us: Our regedit offers you to fix your crosshair perfectly, saving you hours of trying new settings that never work, and taking your gameplay to the next level!\n\n" +
@@ -398,6 +466,68 @@ module.exports = [
             .setImage('https://i.ibb.co/7t5BnmxR/BOOST-RANK-2-1.png'),
 
         menu: menus.menuBoostRank
+    },
+
+    {
+        id: ids.embeds.PANEL_CSGO, // panel csgo
+        messageId: '1430729755061129276',
+        embed: new EmbedBuilder()
+            .setTitle('> HyperV - Panel CSGO')
+            .setDescription(
+                "<a:spain:1117992165470122064> **Descubre nuestro nuevo panel de CSGO2**, que te proporcionará todas las funciones externas disponibles en el mercado para asegurar tu victoria en las partidas, ya sea en modo competitivo o premier. ¡Juega de manera segura y lleva tu experiencia al siguiente nivel!\n\n" +
+                "**Caracteristicas destacadas**\n" +
+                "- **Aimbots:** Totalmente configurables.\n" +
+                "- **Granada Helper:** Optimizado para lanzamiento de granadas y causen daño al enemigo.\n" +
+                "- **Stream Mode:**Esta función permite ocultar los elementos visuales durante transmisiones en vivo o grabaciones, asegurando que tu experiencia de juego se mantenga privada y profesional.\n\n" +
+                "Disfruta de una ventaja competitiva sin comprometer la integridad de tu cuenta. \n\n" +
+                "__**DETALLES:**__\n" +
+                "`- Soporte Windows: 8/10/11`\n" +
+                "`- Soporte CPU: Intel/AMD/Xeon`\n" +
+                "`- Soporte Idiomas: Inglés/Español/Portugués`\n\n" +
+                liston +
+                ":flag_us: **Discover our new CSGO2 panel**, which will provide you with all the external features available on the market to ensure your victory in matches, whether in competitive or premier mode. Play safely and take your experience to the next level!\n\n" +
+                "**Key Features**\n" +
+                "- **Aimbots:** Fully configurable.\n" +
+                "- **Grenade Helper:** Optimized for throwing grenades and dealing damage to the enemy.\n" +
+                "- **Stream Mode:** This feature allows you to hide visual elements during live streams or recordings, ensuring your gaming experience remains private and professional.\n\n" +
+                "Enjoy a competitive edge without compromising the integrity of your account.\n\n" +
+                "__**DETAILS:**__\n" +
+                "`- Support Windows: 8/10/11`\n" +
+                "`- Support CPU: Intel/AMD/Xeon`\n" +
+                "`- Support Idioms: English/Spanish/Portugués`\n"
+            )
+            .setColor(config.embedColor)
+            .setFooter(config.embedFooter)
+            .setImage('https://i.ibb.co/qL0Kh2Yf/cs2-hyper-v-1.png'),
+
+        menu: menus.menuPanelCSGO
+    },
+
+        {
+        id: ids.embeds.PANEL_COD_IOS, // panel cod ios
+        messageId: '1430729755061129276',
+        embed: new EmbedBuilder()
+            .setTitle('> HyperV - Panel COD iOS')
+            .setDescription(
+                "<a:spain:1117992165470122064> **Descubre nuestro nuevo panel iOS de Call Of Duty**, ofrece a sus usuarios funciones de aimbot que garantizan partidas seguras sin restricciones en los modos de juego. Además, cuenta con compatibilidad total con todas las versiones del sistema iOS.\n\n" +
+                "__**DETALLES:**__\n" +
+                "`- Soporte Sistema: iOS`\n" +
+                "`- Soporte Versión del sistema: Todas`\n" +
+                "`- Soporte de instalación: Incluye certificado de GBOX y no necesitas ningun dispositivo ni PC extra.`\n" +
+                "`- Soporte Idiomas: Inglés/Español/Portugués`\n\n" +
+                liston +
+                ":flag_us: **Discover our new Call Of Duty iOS panel**, offers users aimbot and visual features that ensure safe, unrestricted gameplay across all game modes. It also boasts full compatibility with all iOS versions.\n\n" +
+                "__**DETAILS:**__\n" +
+                "`- Support System: iOS`\n" +
+                "`- Support System version: All`\n" +
+                "`- Installation support: Includes GBOX certificate and you don't need any extra devices or PCs.`\n" +
+                "`- Support Idioms: English/Spanish/Portugués`"
+            )
+            .setColor(config.embedColor)
+            .setFooter(config.embedFooter)
+            .setImage('https://i.ibb.co/67hyVH0M/COD-HYPER-V-1.png'),
+
+        menu: menus.menuPanelCODIOS
     },
 
     {
@@ -569,7 +699,7 @@ module.exports = [
         id: ids.embeds.PAGOS_PERU, // metodos de pago de peru
         messageId: '1430729762355019796',
         embed: new EmbedBuilder()
-            .setTitle('> HyperV - Métodos de Pago Nacionales <:HyperVZeus1:1326269368291688479>')
+            .setTitle('> HyperV - Métodos de Pago Nacionales <:zeusaa:1433927475976474624>')
             .setDescription("**BCP Soles** <:BCP:1117992075154178150>\n**Número de cuenta:** 47070818592082\n**CCI:** 00247017081859208231\n**Datos:** Carlos Bonifacio Guerra\n\n**Interbank Soles** <:INTERBANK:1117992077939200021>\n**Número de cuenta:** 8983317709473\n**CCI:** 00389801331770947346\n**Datos:** Carlos Bonifacio Guerra\n\n**Interbank Dólares** <:INTERBANK:1117992077939200021>\n**CCI:** 00389801330614896749\n**Datos:** Carlos Bonifacio Guerra\n\n**Scotiabank Soles** <:descarga:1117992071844872232>\n**Número de cuenta:** 1640618284\n**CCI:** 00930120164061828434\n**Datos:** Carlos Bonifacio Guerra\n\n**BBVA Soles** <:bbva:1117992076156612650>\n**Número de cuenta:** 0011-0241-0200790414\nCCI: 011-241-000200790414-73\n**Datos:** Carlos Bonifacio Guerra\n\n**Yape/Plin** <:yape:1117992073887502410>\n925358613\n**Datos:** Carlos Bonifacio Guerra")
             .setColor(config.embedColor)
             .setFooter(config.embedFooter)
@@ -577,9 +707,9 @@ module.exports = [
 
     {
         id: ids.embeds.PAGOS_INTERNACIONALES,
-        messageId: '1450539826867605546',
+        messageId: '1454526837689552897',
         embed: new EmbedBuilder()
-            .setTitle('> HyperV - Métodos de Pago Internacionales <:HyperVZeus1:1326269368291688479>')
+            .setTitle('> HyperV - Métodos de Pago Internacionales <:zeusaa:1433927475976474624>')
             .setDescription(
                 "**Western Union** <:10892796357553685601:1117992080912945222>\n**Nombres:** Carlos Mario Farid\n**Apellidos:** Bonifacio Guerra\n**DNI:** 76850426\n**Celular:** +51925358613\n**País:** Perú\n**Ciudad:** Pisco\n**Dirección:** Calle los jazmines 341\n**Nota: Indicar que se recibe en dólares. Revise bien los datos, no se podrá devolver el dinero si hay errores.**\n\n" +
                 "**Remitly** <:1039637352546578432:1117992079289749566>\n**Indicar que se recibe en dólares**\n**Banco:** INTERBANK\n**Cuenta:** Ahorros dólares\n**Número de cuenta:** 8983306148967\n**Número de identificación:** 76850426\n**Nombre completo:** Carlos Mario Farid\n**Apellido:** Bonifacio\n**Segundo apellido:** Guerra\n**Teléfono:** 925358613\n**País:** Perú\n**Ciudad:** Pisco\n**Región:** Ica\n\n" +
@@ -596,8 +726,9 @@ module.exports = [
                 "**Banrural monetaria - Guatemala <a:guatemala:1449442439277580369>**\n3139173628\n**Datos:** Kimberly Garcia\n\n" +
                 "**Banco Pichincha** <:ecuador:1232045296998023260>\n**Cuenta de ahorro transaccional:** 2214588834\n**Datos:** Jostin Stiven Martinez Parrales\n\n" +
                 "**Cuenta República Dominicana** <a:rddd:1449442346939973783>\n**Nombre:**Jenny Joselin Rodríguez Castillo\n**Cédula:** 0540131783-8\n\n" +
-                "**Cuenta Prex Uruguay**\n**Cuenta:**  22303077\n\n**Nombre:**Luana Esbry\n\n" +
-                "**Página Web** <:HyperVZeus1:1326269368291688479>\n**Link:** [hyperv.store](https://hyperv.store)\n**Para compras online internacionales pide el cupón de descuento para los clientes**"
+                "**Cuenta Prex Uruguay**\n**Cuenta:** 22303077\n**Nombre:**Luana Esbry\n\n" +
+                "<a:spain:1117992165470122064> **Cuenta Bizum España**\n**Cuenta:** 611557148\n**Nombre:**Jeuri Hernández\n\n" +
+                "**Página Web** <:zeusaa:1433927475976474624>\n**Link:** [hyperv.store](https://hyperv.store)\n**Para compras online internacionales pide el cupón de descuento para los clientes**"
             )
             .setColor(config.embedColor)
             .setFooter(config.embedFooter)
@@ -605,20 +736,20 @@ module.exports = [
 
     {
         id: ids.embeds.BANCO_BOLIVIA, // banco bolivia
-        messageId: '1440130376176631919',
+        messageId: '1454953819116015627',
         embed: new EmbedBuilder()
-            .setTitle('> HyperV - Transferencia Bolivia <:HyperVZeus1:1326269368291688479>')
-            .setDescription("**Transferencia QR**\n**Banco**: Banco Unión\n**Titular**: Genoveva Mamani\n**Tipo de Cambio:** 10.75 = 1$")
+            .setTitle('> HyperV - QR Bolivia <:zeusaa:1433927475976474624>')
+            .setDescription("**Transferencia QR**\n**Banco**: Banco Sol\n**Titular**: Yarela Franciss Rodriguez Lopez\n**Tipo de Cambio:** 12 = 1$")
             .setColor(config.embedColor)
             .setFooter(config.embedFooter)
-            .setImage('https://i.ibb.co/FFphw2L/image.png')
+            .setImage('https://i.ibb.co/R4gR2JzT/Captura-de-pantalla-2025-12-28-164944.png')
     },
 
     {
         id: ids.embeds.ZELLE, // zelle
         messageId: '1437816975601701004',
         embed: new EmbedBuilder()
-            .setTitle('> HyperV - Zelle <:HyperVZeus1:1326269368291688479>')
+            .setTitle('> HyperV - Zelle <:zeusaa:1433927475976474624>')
             .setDescription("**Nombre:** Cristian Amavizca\n**Numero**: +1 (208) 598-2850")
             .setColor(config.embedColor)
             .setFooter(config.embedFooter)
@@ -629,7 +760,7 @@ module.exports = [
         id: ids.embeds.WEBSITE_LOGIN, // login website
         messageId: '1430729765547016303',
         embed: new EmbedBuilder()
-            .setTitle('> HyperV - Website <:HyperVZeus1:1326269368291688479>')
+            .setTitle('> HyperV - Website <:zeusaa:1433927475976474624>')
             .setDescription("**PUEDES SOLICITAR UN CUPÓN DE DESCUENTO PERSONALIZADO PARA COMPRAS EN [HyperV Store](https://hyperv.store)**\n\n**Para compras menores a 15 USD**: Descuento de 2 USD\n**Para compras entre 15 USD a 30 usd**: Descuento de 3 USD\n**Para compras de 30 usd a más**: Descuento de 5 USD\n\nSolicita tu cupón a <@!1288338421772849275>")
             .setColor(config.embedColor)
             .setFooter(config.embedFooter)
@@ -638,7 +769,7 @@ module.exports = [
 
     {
         id: ids.embeds.LOGIN_VENTAS,
-        messageId: '1450949463370633275',
+        messageId: '1454537257347321867',
         embed: new EmbedBuilder()
             .setTitle('> HyperV - Registro de Ventas')
             .setDescription(
@@ -651,6 +782,7 @@ module.exports = [
                 "- Precio cobrado\n" +
                 "- Moneda\n" +
                 "- Soporte\n" +
+                "- Producto Adicional + Periodo Adicional (OPCIONAL POR SI VENDEN DOS PRODUCTOS JUNTOS COMO PANEL + BYPASS)" +
                 "- Comprobante de pago\n" +
                 "- WhatsApp (OPCIONAL)\n" +
                 "- Nota (OPCIONAL)\n\n" +
@@ -714,30 +846,29 @@ module.exports = [
 
     {
         id: ids.embeds.PANEL_FULL_INFO, // full info
-        messageId: '1434932213912441033',
+        messageId: '1452814722239037572',
         embed: new EmbedBuilder()
             .setTitle('> HyperV - Panel Full Informacion')
-            .setDescription("<:Windowsdefender:1433924527926018058>[Desactivar Windows](https://mega.nz/file/t4pGwaRQ#uDFuTSEL0mw5zSpnYMtj1_0FGbQB8SpcLsOdRrk4vpg) - [Tutorial de instalación](https://youtu.be/kGNnJm8vob4)\n" +
-                "<:Regedit:1433924546242674688> [Eliminar Emulador](https://www.asuswebstorage.com/navigate/a/#/s/397E7A3AC777406585B6AC60C02056614) \n" +
-                "<:visualcode:1318276426885103719>  [Requerimientos del panel](https://www.asuswebstorage.com/navigate/a/#/s/2BDD28B35E6E49C7BC6613CF8AC551954) [Tutorial de instalación](https://youtu.be/DimHrgN9Bp0)\n" +
-                "<:visualcode:1318276426885103719>  [DLL](https://www.asuswebstorage.com/navigate/a/#/s/D6606A1916944E3F9223EA0FFFC6B5234)  [Tutorial de instalación](https://youtu.be/uLnKbGzELVE)\n\n" +
-                "**Emuladores compatibles**\n" +
-                "<a:_alerta_:1316557202621988915>  *`- Compatibles con el panel.`*\n\n" +
-                "<:bluestacks5:1433923976966570135>  [Emulador BlueStacks P64(v5.14)](https://www.asuswebstorage.com/navigate/a/#/s/36339C6867DC4BE9BE5360E63002ED4F4)\n" +
-                "<:bluestacks5:1433923976966570135>  [Emulador BlueStacks P64(v5.22.1001)](https://www.mediafire.com/file/gfyctlqlo8xtsjr/BlueStacks_5.22.exe/file)\n" +
-                "<:msi5:1433924381423177799> [Emulador MSI P64(v5.12)](https://www.mediafire.com/file/2gz19xwx14lctlg/Msi_App.5.12.exe/file)\n\n" +
-                "**Free Fire Versions**\n" +
-                "*`- Compatibles con el panel.`*\n\n" +
-                "<:obb51:1433261279979769856> [Free Fire Normal](https://www.mediafire.com/file/bvx0pi6pxjtlpui/Free_Fire_Normal.xapk/file)\n" +
-                "<:obb51:1433261279979769856> [Free Fire India/Max](https://www.mediafire.com/file/73c2zqnqs3p3qww/Free_Fire_India-Max.xapk/file)\n" +
-                "<:obb51:1433261279979769856> [Free Fire Tela](https://www.mediafire.com/file/y3dchqybqstx17d/FreeFire-X86-Tela.xapk/file)\n\n" +
-                "**Loader HyperV**\n" +
-                "*`- Actualizado 29/10.`*\n\n" +
-                "<:LOGOTIPOLETRASHYPERV:1433266402621653062> [Loader HyperV](https://www.asuswebstorage.com/navigate/a/#/s/CEFD84D027D946ADA9C9981C4946D53A4)\n\n" +
-                "**Grupo WhatsApp:** [Click aqui](https://chat.whatsapp.com/BqJU8Ph6F7s39JIbH9HpUL)\n" +
-                "<a:_alerta_:1316557202621988915> Obligatorio: Luego de mandar solicitud para unirse, enviar su numero por DM a un <@&" + roles.VENDOR + "> para que sean aceptados.")
+            .setDescription(liston +
+                "> **Requerimientos**\n\n" +
+                "<:Windowsdefender:1433924527926018058> [`Desactivar Antivirus de Windows`](https://www.youtube.com/watch?v=kGNnJm8vob4)\n" +
+                "<:Regedit:1433924546242674688> [`Eliminar Emulador`](https://www.asuswebstorage.com/navigate/a/#/s/40CACD03841D4E828FAEF970B7A82BA44)\n" +
+                "<:visualcode:1318276426885103719> [`Drivers requeridos`](https://youtu.be/DimHrgN9Bp0)\n\n" +
+                "> **Versiones de emuladores recomendados**\n\n" +
+                "<:bluestacks5:1433923976966570135>  [`Emulador BlueStacks P64(v5.14)`](https://www.asuswebstorage.com/navigate/a/#/s/CC407177AC7A46A68556131A4800710B4)\n" +
+                "<:bluestacks5:1433923976966570135>  [`Emulador BlueStacks P64(v5.22.1001)`](https://www.asuswebstorage.com/navigate/a/#/s/79BE2AC4E38D4EB0933EA4C4572CEA054)\n" +
+                "<:msi5:1433924381423177799> [`Emulador MSI P64(v5.12)`](https://www.asuswebstorage.com/navigate/a/#/s/7B5BAB5B329F4A7B82B91871EBCC52B34)*\n\n" +
+                "> **Versiones de Free Fire recomendadas**\n\n" +
+                "<:obb51:1433261279979769856> [`Free Fire Normal`](https://www.asuswebstorage.com/navigate/a/#/s/C353F6E1D0204D0B81966733C8D5FF504)\n" +
+                "<:obb51:1433261279979769856> [`Free Fire India/Max`](https://www.asuswebstorage.com/navigate/a/#/s/4065379211D445C9B8914ECEFDF8E5984)\n" +
+                "<:obb51:1433261279979769856> [`Free Fire Tela`](https://www.asuswebstorage.com/navigate/a/#/s/441570DB1E59485E904ED7938B20062F4)\n\n" +
+                "> **Ejecutable del Panel**\n\n" +
+                "<:zeusaa:1433927475976474624> [`Loader`](https://www.asuswebstorage.com/navigate/a/#/s/BD5E33608A064AD4926D3314AC6888D94)\n\n" +
+                "> **Grupo WhatsApp:** [Click aqui](https://chat.whatsapp.com/BqJU8Ph6F7s39JIbH9HpUL)\n" +
+                "<a:_alerta_:1316557202621988915> Obligatorio: Luego de mandar solicitud para unirse, enviar su numero por DM a un <@&" + roles.VENDOR + "> para que sean aceptados.\n\n" )
             .setColor(config.embedColor)
             .setFooter(config.embedFooter)
+            .setTimestamp()
             .setImage('https://i.ibb.co/mrygpcyg/PROGRAMAS-REQUERIDOS-1.png'),
         menu: menus.menuFullInfo
     },
@@ -747,27 +878,26 @@ module.exports = [
         messageId: '1435442825767420037',
         embed: new EmbedBuilder()
             .setTitle('> HyperV - Panel Secure Informacion')
-            .setDescription("<:Windowsdefender:1433924527926018058>[Desactivar Windows](https://mega.nz/file/t4pGwaRQ#uDFuTSEL0mw5zSpnYMtj1_0FGbQB8SpcLsOdRrk4vpg) - [Tutorial de instalación](https://youtu.be/kGNnJm8vob4)\n" +
-                "<:Regedit:1433924546242674688> [Eliminar Emulador](https://www.asuswebstorage.com/navigate/a/#/s/397E7A3AC777406585B6AC60C02056614) \n" +
-                "<:visualcode:1318276426885103719>  [Requerimientos del panel](https://www.asuswebstorage.com/navigate/a/#/s/2BDD28B35E6E49C7BC6613CF8AC551954) - [Tutorial de instalación](https://youtu.be/DimHrgN9Bp0)\n" +
-                "<:visualcode:1318276426885103719>  [DLL](https://www.asuswebstorage.com/navigate/a/#/s/D6606A1916944E3F9223EA0FFFC6B5234)  [Tutorial de instalación](https://youtu.be/uLnKbGzELVE)\n\n" +
-                "**Emuladores compatibles**\n" +
-                "<a:_alerta_:1316557202621988915>  *`- Compatibles con el panel.`*\n\n" +
-                "<:bluestacks5:1433923976966570135>  [Emulador BlueStacks P64(v5.14)](https://www.asuswebstorage.com/navigate/a/#/s/36339C6867DC4BE9BE5360E63002ED4F4)\n" +
-                "<:bluestacks5:1433923976966570135>  [Emulador BlueStacks P64(v5.22.1001)](https://www.mediafire.com/file/gfyctlqlo8xtsjr/BlueStacks_5.22.exe/file)\n" +
-                "<:msi5:1433924381423177799> [Emulador MSI P64(v5.12)](https://www.mediafire.com/file/2gz19xwx14lctlg/Msi_App.5.12.exe/file)\n\n" +
-                "**Free Fire Versions**\n" +
-                "*`- Compatibles con el panel.`*\n\n" +
-                "<:obb51:1433261279979769856> [Free Fire Normal](https://www.mediafire.com/file/bvx0pi6pxjtlpui/Free_Fire_Normal.xapk/file)\n" +
-                "<:obb51:1433261279979769856> [Free Fire India/Max](https://www.mediafire.com/file/73c2zqnqs3p3qww/Free_Fire_India-Max.xapk/file)\n" +
-                "<:obb51:1433261279979769856> [Free Fire Tela](https://www.mediafire.com/file/y3dchqybqstx17d/FreeFire-X86-Tela.xapk/file)\n\n" +
-                "**Loader HyperV**\n" +
-                "*`- Actualizado 29/10.`*\n\n" +
-                "<:LOGOTIPOLETRASHYPERV:1433266402621653062> [Loader HyperV](https://www.asuswebstorage.com/navigate/a/#/s/CEFD84D027D946ADA9C9981C4946D53A4)\n\n" +
-                "**Grupo WhatsApp:** [Click aqui](https://chat.whatsapp.com/BqJU8Ph6F7s39JIbH9HpUL)\n" +
-                "<a:_alerta_:1316557202621988915> Obligatorio: Luego de mandar solicitud para unirse, enviar su numero por DM a un <@&" + roles.VENDOR + "> para que sean aceptados.")
+            .setDescription(liston +
+                "> **Requerimientos**\n\n" +
+                "<:Windowsdefender:1433924527926018058> [`Desactivar Antivirus de Windows`](https://www.youtube.com/watch?v=kGNnJm8vob4)\n" +
+                "<:Regedit:1433924546242674688> [`Eliminar Emulador`](https://www.asuswebstorage.com/navigate/a/#/s/40CACD03841D4E828FAEF970B7A82BA44)\n" +
+                "<:visualcode:1318276426885103719> [`Drivers requeridos`](https://youtu.be/DimHrgN9Bp0)\n\n" +
+                "> **Versiones de emuladores recomendados**\n\n" +
+                "<:bluestacks5:1433923976966570135>  [`Emulador BlueStacks P64(v5.14)`](https://www.asuswebstorage.com/navigate/a/#/s/CC407177AC7A46A68556131A4800710B4)\n" +
+                "<:bluestacks5:1433923976966570135>  [`Emulador BlueStacks P64(v5.22.1001)`](https://www.asuswebstorage.com/navigate/a/#/s/79BE2AC4E38D4EB0933EA4C4572CEA054)\n" +
+                "<:msi5:1433924381423177799> [`Emulador MSI P64(v5.12)`](https://www.asuswebstorage.com/navigate/a/#/s/7B5BAB5B329F4A7B82B91871EBCC52B34)*\n\n" +
+                "> **Versiones de Free Fire recomendadas**\n\n" +
+                "<:obb51:1433261279979769856> [`Free Fire Normal`](https://www.asuswebstorage.com/navigate/a/#/s/C353F6E1D0204D0B81966733C8D5FF504)\n" +
+                "<:obb51:1433261279979769856> [`Free Fire India/Max`](https://www.asuswebstorage.com/navigate/a/#/s/4065379211D445C9B8914ECEFDF8E5984)\n" +
+                "<:obb51:1433261279979769856> [`Free Fire Tela`](https://www.asuswebstorage.com/navigate/a/#/s/441570DB1E59485E904ED7938B20062F4)\n\n" +
+                "> **Ejecutable del Panel**\n\n" +
+                "<:zeusaa:1433927475976474624> [`Loader`](https://www.asuswebstorage.com/navigate/a/#/s/BD5E33608A064AD4926D3314AC6888D94)\n\n" +
+                "> **Grupo WhatsApp:** [Click aqui](https://chat.whatsapp.com/BqJU8Ph6F7s39JIbH9HpUL)\n" +
+                "<a:_alerta_:1316557202621988915> Obligatorio: Luego de mandar solicitud para unirse, enviar su numero por DM a un <@&" + roles.VENDOR + "> para que sean aceptados.\n\n" )
             .setColor(config.embedColor)
             .setFooter(config.embedFooter)
+            .setTimestamp()
             .setImage('https://i.ibb.co/mrygpcyg/PROGRAMAS-REQUERIDOS-1.png'),
         menu: menus.menuSecureInfo
     },
@@ -777,27 +907,26 @@ module.exports = [
         messageId: '1435442826593960099',
         embed: new EmbedBuilder()
             .setTitle('> HyperV - Panel Only Aimbot Informacion')
-            .setDescription("<:Windowsdefender:1433924527926018058>[Desactivar Windows](https://mega.nz/file/t4pGwaRQ#uDFuTSEL0mw5zSpnYMtj1_0FGbQB8SpcLsOdRrk4vpg) - [Tutorial de instalación](https://youtu.be/kGNnJm8vob4)\n" +
-                "<:Regedit:1433924546242674688> [Eliminar Emulador](https://www.asuswebstorage.com/navigate/a/#/s/397E7A3AC777406585B6AC60C02056614) \n" +
-                "<:visualcode:1318276426885103719>  [Requerimientos del panel](https://www.asuswebstorage.com/navigate/a/#/s/2BDD28B35E6E49C7BC6613CF8AC551954) - [Tutorial de instalación](https://youtu.be/DimHrgN9Bp0)\n" +
-                "<:visualcode:1318276426885103719>  [DLL](https://www.asuswebstorage.com/navigate/a/#/s/D6606A1916944E3F9223EA0FFFC6B5234)  [Tutorial de instalación](https://youtu.be/uLnKbGzELVE)\n\n" +
-                "**Emuladores compatibles**\n" +
-                "<a:_alerta_:1316557202621988915>  *`- Compatibles con el panel.`*\n\n" +
-                "<:bluestacks5:1433923976966570135>  [Emulador BlueStacks P64(v5.14)](https://www.asuswebstorage.com/navigate/a/#/s/36339C6867DC4BE9BE5360E63002ED4F4)\n" +
-                "<:bluestacks5:1433923976966570135>  [Emulador BlueStacks P64(v5.22.1001)](https://www.mediafire.com/file/gfyctlqlo8xtsjr/BlueStacks_5.22.exe/file)\n" +
-                "<:msi5:1433924381423177799> [Emulador MSI P64(v5.12)](https://www.mediafire.com/file/2gz19xwx14lctlg/Msi_App.5.12.exe/file)\n\n" +
-                "**Free Fire Versions**\n" +
-                "*`- Compatibles con el panel.`*\n\n" +
-                "<:obb51:1433261279979769856> [Free Fire Normal](https://www.mediafire.com/file/bvx0pi6pxjtlpui/Free_Fire_Normal.xapk/file)\n" +
-                "<:obb51:1433261279979769856> [Free Fire India/Max](https://www.mediafire.com/file/73c2zqnqs3p3qww/Free_Fire_India-Max.xapk/file)\n" +
-                "<:obb51:1433261279979769856> [Free Fire Tela](https://www.mediafire.com/file/y3dchqybqstx17d/FreeFire-X86-Tela.xapk/file)\n\n" +
-                "**Loader HyperV**\n" +
-                "*`- Actualizado 29/10.`*\n\n" +
-                "<:LOGOTIPOLETRASHYPERV:1433266402621653062> [Loader HyperV](https://www.asuswebstorage.com/navigate/a/#/s/CEFD84D027D946ADA9C9981C4946D53A4)\n\n" +
-                "**Grupo WhatsApp:** [Click aqui](https://chat.whatsapp.com/BqJU8Ph6F7s39JIbH9HpUL)\n" +
-                "<a:_alerta_:1316557202621988915> Obligatorio: Luego de mandar solicitud para unirse, enviar su numero por DM a un <@&" + roles.VENDOR + "> para que sean aceptados.")
+            .setDescription(liston +
+                "> **Requerimientos**\n\n" +
+                "<:Windowsdefender:1433924527926018058> [`Desactivar Antivirus de Windows`](https://www.youtube.com/watch?v=kGNnJm8vob4)\n" +
+                "<:Regedit:1433924546242674688> [`Eliminar Emulador`](https://www.asuswebstorage.com/navigate/a/#/s/40CACD03841D4E828FAEF970B7A82BA44)\n" +
+                "<:visualcode:1318276426885103719> [`Drivers requeridos`](https://youtu.be/DimHrgN9Bp0)\n\n" +
+                "> **Versiones de emuladores recomendados**\n\n" +
+                "<:bluestacks5:1433923976966570135>  [`Emulador BlueStacks P64(v5.14)`](https://www.asuswebstorage.com/navigate/a/#/s/CC407177AC7A46A68556131A4800710B4)\n" +
+                "<:bluestacks5:1433923976966570135>  [`Emulador BlueStacks P64(v5.22.1001)`](https://www.asuswebstorage.com/navigate/a/#/s/79BE2AC4E38D4EB0933EA4C4572CEA054)\n" +
+                "<:msi5:1433924381423177799> [`Emulador MSI P64(v5.12)`](https://www.asuswebstorage.com/navigate/a/#/s/7B5BAB5B329F4A7B82B91871EBCC52B34)*\n\n" +
+                "> **Versiones de Free Fire recomendadas**\n\n" +
+                "<:obb51:1433261279979769856> [`Free Fire Normal`](https://www.asuswebstorage.com/navigate/a/#/s/C353F6E1D0204D0B81966733C8D5FF504)\n" +
+                "<:obb51:1433261279979769856> [`Free Fire India/Max`](https://www.asuswebstorage.com/navigate/a/#/s/4065379211D445C9B8914ECEFDF8E5984)\n" +
+                "<:obb51:1433261279979769856> [`Free Fire Tela`](https://www.asuswebstorage.com/navigate/a/#/s/441570DB1E59485E904ED7938B20062F4)\n\n" +
+                "> **Ejecutable del Panel**\n\n" +
+                "<:zeusaa:1433927475976474624> [`Loader`](https://www.asuswebstorage.com/navigate/a/#/s/BD5E33608A064AD4926D3314AC6888D94)\n\n" +
+                "> **Grupo WhatsApp:** [Click aqui](https://chat.whatsapp.com/BqJU8Ph6F7s39JIbH9HpUL)\n" +
+                "<a:_alerta_:1316557202621988915> Obligatorio: Luego de mandar solicitud para unirse, enviar su numero por DM a un <@&" + roles.VENDOR + "> para que sean aceptados.\n\n" )
             .setColor(config.embedColor)
             .setFooter(config.embedFooter)
+            .setTimestamp()
             .setImage('https://i.ibb.co/mrygpcyg/PROGRAMAS-REQUERIDOS-1.png'),
         menu: menus.menuOnlyAimbotInfo
     },
@@ -807,27 +936,26 @@ module.exports = [
         messageId: '1435442827663511583',
         embed: new EmbedBuilder()
             .setTitle('> HyperV - Menu Chams Informacion')
-            .setDescription("<:Windowsdefender:1433924527926018058>[Desactivar Windows Defender](https://mega.nz/file/t4pGwaRQ#uDFuTSEL0mw5zSpnYMtj1_0FGbQB8SpcLsOdRrk4vpg) [Tutorial de instalación](https://youtu.be/kGNnJm8vob4)\n" +
-                "<:Regedit:1433924546242674688> [Eliminar Emulador](https://www.asuswebstorage.com/navigate/a/#/s/397E7A3AC777406585B6AC60C02056614) \n" +
-                "<:visualcode:1318276426885103719>  [Requerimientos del panel](https://www.asuswebstorage.com/navigate/a/#/s/2BDD28B35E6E49C7BC6613CF8AC551954) - [Tutorial de instalación](https://youtu.be/DimHrgN9Bp0)\n" +
-                "<:visualcode:1318276426885103719>  [DLL](https://www.asuswebstorage.com/navigate/a/#/s/D6606A1916944E3F9223EA0FFFC6B5234)  [Tutorial de instalación](https://youtu.be/uLnKbGzELVE)\n\n" +
-                "**Emuladores compatibles**\n" +
-                "<a:_alerta_:1316557202621988915>  *`- Compatibles con el panel.`*\n\n" +
-                "<:bluestacks5:1433923976966570135>  [Emulador BlueStacks P64(v5.14)](https://www.asuswebstorage.com/navigate/a/#/s/36339C6867DC4BE9BE5360E63002ED4F4)\n" +
-                "<:bluestacks5:1433923976966570135>  [Emulador BlueStacks P64(v5.22.1001)](https://www.mediafire.com/file/gfyctlqlo8xtsjr/BlueStacks_5.22.exe/file)\n" +
-                "<:msi5:1433924381423177799> [Emulador MSI P64(v5.12)](https://www.mediafire.com/file/2gz19xwx14lctlg/Msi_App.5.12.exe/file)\n\n" +
-                "**Free Fire Versions**\n" +
-                "*`- Compatibles con el panel.`*\n\n" +
-                "<:obb51:1433261279979769856> [Free Fire Normal](https://www.mediafire.com/file/bvx0pi6pxjtlpui/Free_Fire_Normal.xapk/file)\n" +
-                "<:obb51:1433261279979769856> [Free Fire India/Max](https://www.mediafire.com/file/73c2zqnqs3p3qww/Free_Fire_India-Max.xapk/file)\n" +
-                "<:obb51:1433261279979769856> [Free Fire Tela](https://www.mediafire.com/file/y3dchqybqstx17d/FreeFire-X86-Tela.xapk/file)\n\n" +
-                "**Loader HyperV**\n" +
-                "*`- Actualizado 29/10.`*\n\n" +
-                "<:LOGOTIPOLETRASHYPERV:1433266402621653062> [Loader HyperV](https://www.asuswebstorage.com/navigate/a/#/s/CEFD84D027D946ADA9C9981C4946D53A4)\n\n" +
-                "**Grupo WhatsApp:** [Click aqui](https://chat.whatsapp.com/BqJU8Ph6F7s39JIbH9HpUL)\n" +
-                "<a:_alerta_:1316557202621988915> Obligatorio: Luego de mandar solicitud para unirse, enviar su numero por DM a un <@&" + roles.VENDOR + "> para que sean aceptados.")
+            .setDescription(liston +
+                "> **Requerimientos**\n\n" +
+                "<:Windowsdefender:1433924527926018058> [`Desactivar Antivirus de Windows`](https://www.youtube.com/watch?v=kGNnJm8vob4)\n" +
+                "<:Regedit:1433924546242674688> [`Eliminar Emulador`](https://www.asuswebstorage.com/navigate/a/#/s/40CACD03841D4E828FAEF970B7A82BA44)\n" +
+                "<:visualcode:1318276426885103719> [`Drivers requeridos`](https://youtu.be/DimHrgN9Bp0)\n\n" +
+                "> **Versiones de emuladores recomendados**\n\n" +
+                "<:bluestacks5:1433923976966570135>  [`Emulador BlueStacks P64(v5.14)`](https://www.asuswebstorage.com/navigate/a/#/s/CC407177AC7A46A68556131A4800710B4)\n" +
+                "<:bluestacks5:1433923976966570135>  [`Emulador BlueStacks P64(v5.22.1001)`](https://www.asuswebstorage.com/navigate/a/#/s/79BE2AC4E38D4EB0933EA4C4572CEA054)\n" +
+                "<:msi5:1433924381423177799> [`Emulador MSI P64(v5.12)`](https://www.asuswebstorage.com/navigate/a/#/s/7B5BAB5B329F4A7B82B91871EBCC52B34)*\n\n" +
+                "> **Versiones de Free Fire recomendadas**\n\n" +
+                "<:obb51:1433261279979769856> [`Free Fire Normal`](https://www.asuswebstorage.com/navigate/a/#/s/C353F6E1D0204D0B81966733C8D5FF504)\n" +
+                "<:obb51:1433261279979769856> [`Free Fire India/Max`](https://www.asuswebstorage.com/navigate/a/#/s/4065379211D445C9B8914ECEFDF8E5984)\n" +
+                "<:obb51:1433261279979769856> [`Free Fire Tela`](https://www.asuswebstorage.com/navigate/a/#/s/441570DB1E59485E904ED7938B20062F4)\n\n" +
+                "> **Ejecutable del Panel**\n\n" +
+                "<:zeusaa:1433927475976474624> [`Loader`](https://www.asuswebstorage.com/navigate/a/#/s/BD5E33608A064AD4926D3314AC6888D94)\n\n" +
+                "> **Grupo WhatsApp:** [Click aqui](https://chat.whatsapp.com/BqJU8Ph6F7s39JIbH9HpUL)\n" +
+                "<a:_alerta_:1316557202621988915> Obligatorio: Luego de mandar solicitud para unirse, enviar su numero por DM a un <@&" + roles.VENDOR + "> para que sean aceptados.\n\n" )
             .setColor(config.embedColor)
             .setFooter(config.embedFooter)
+            .setTimestamp()
             .setImage('https://i.ibb.co/mrygpcyg/PROGRAMAS-REQUERIDOS-1.png'),
         menu: menus.menuChamsInfo
     },
@@ -837,27 +965,25 @@ module.exports = [
         messageId: '1435442828355309608',
         embed: new EmbedBuilder()
             .setTitle('> HyperV - Bypass APK Informacion')
-            .setDescription("<:Windowsdefender:1433924527926018058>[Desactivar Windows](https://mega.nz/file/t4pGwaRQ#uDFuTSEL0mw5zSpnYMtj1_0FGbQB8SpcLsOdRrk4vpg) - [Tutorial de instalación](https://youtu.be/kGNnJm8vob4)\n" +
-                "<:Regedit:1433924546242674688> [Eliminar Emulador](https://www.asuswebstorage.com/navigate/a/#/s/397E7A3AC777406585B6AC60C02056614) \n" +
-                "<:visualcode:1318276426885103719>  [Requerimientos del panel](https://www.asuswebstorage.com/navigate/a/#/s/2BDD28B35E6E49C7BC6613CF8AC551954) - [Tutorial de instalación](https://youtu.be/DimHrgN9Bp0)\n" +
-                "<:visualcode:1318276426885103719>  [DLL](https://www.asuswebstorage.com/navigate/a/#/s/D6606A1916944E3F9223EA0FFFC6B5234)  [Tutorial de instalación](https://youtu.be/uLnKbGzELVE)\n\n" +
-                "**Emuladores compatibles**\n" +
-                "<a:_alerta_:1316557202621988915>  *`- Compatibles con el panel.`*\n\n" +
-                "<:bluestacks5:1433923976966570135>  [Emulador BlueStacks P64(v5.14)](https://www.asuswebstorage.com/navigate/a/#/s/36339C6867DC4BE9BE5360E63002ED4F4)\n" +
-                "<:bluestacks5:1433923976966570135>  [Emulador BlueStacks P64(v5.22.1001)](https://www.mediafire.com/file/gfyctlqlo8xtsjr/BlueStacks_5.22.exe/file)\n" +
-                "<:msi5:1433924381423177799> [Emulador MSI P64(v5.12)](https://www.mediafire.com/file/2gz19xwx14lctlg/Msi_App.5.12.exe/file)\n\n" +
-                "**Free Fire Versions**\n" +
-                "*`- Compatibles con el panel.`*\n\n" +
-                "<:obb51:1433261279979769856> [Free Fire Normal](https://www.mediafire.com/file/bvx0pi6pxjtlpui/Free_Fire_Normal.xapk/file)\n" +
-                "<:obb51:1433261279979769856> [Free Fire India/Max](https://www.mediafire.com/file/73c2zqnqs3p3qww/Free_Fire_India-Max.xapk/file)\n" +
-                "<:obb51:1433261279979769856> [Free Fire Tela](https://www.mediafire.com/file/y3dchqybqstx17d/FreeFire-X86-Tela.xapk/file)\n\n" +
-                "**Loader HyperV**\n" +
-                "*`- Actualizado 29/10.`*\n\n" +
-                "<:LOGOTIPOLETRASHYPERV:1433266402621653062> [Loader HyperV](https://www.asuswebstorage.com/navigate/a/#/s/CEFD84D027D946ADA9C9981C4946D53A4)\n\n" +
-                "**Grupo WhatsApp:** [Click aqui](https://chat.whatsapp.com/BqJU8Ph6F7s39JIbH9HpUL)\n" +
-                "<a:_alerta_:1316557202621988915> Obligatorio: Luego de mandar solicitud para unirse, enviar su numero por DM a un <@&" + roles.VENDOR + "> para que sean aceptados.")
+            .setDescription(liston +
+                "> **Requerimientos**\n\n" +
+                "<:Windowsdefender:1433924527926018058> [`Desactivar Antivirus de Windows`](https://www.youtube.com/watch?v=kGNnJm8vob4)\n" +
+                "<:Regedit:1433924546242674688> [`Eliminar Emulador`](https://www.asuswebstorage.com/navigate/a/#/s/40CACD03841D4E828FAEF970B7A82BA44)\n\n" +
+                "> **Versiones de emuladores recomendados**\n\n" +
+                "<:bluestacks5:1433923976966570135>  [`Emulador BlueStacks P64(v5.14)`](https://www.asuswebstorage.com/navigate/a/#/s/CC407177AC7A46A68556131A4800710B4)\n" +
+                "<:bluestacks5:1433923976966570135>  [`Emulador BlueStacks P64(v5.22.1001)`](https://www.asuswebstorage.com/navigate/a/#/s/79BE2AC4E38D4EB0933EA4C4572CEA054)\n" +
+                "<:msi5:1433924381423177799> [`Emulador MSI P64(v5.12)`](https://www.asuswebstorage.com/navigate/a/#/s/7B5BAB5B329F4A7B82B91871EBCC52B34)*\n\n" +
+                "> **Versiones de Free Fire recomendadas**\n\n" +
+                "<:obb51:1433261279979769856> [`Free Fire Normal`](https://www.asuswebstorage.com/navigate/a/#/s/C353F6E1D0204D0B81966733C8D5FF504)\n" +
+                "<:obb51:1433261279979769856> [`Free Fire India/Max`](https://www.asuswebstorage.com/navigate/a/#/s/4065379211D445C9B8914ECEFDF8E5984)\n" +
+                "<:obb51:1433261279979769856> [`Free Fire Tela`](https://www.asuswebstorage.com/navigate/a/#/s/441570DB1E59485E904ED7938B20062F4)\n\n" +
+                "> **Ejecutable del Panel**\n\n" +
+                "<:zeusaa:1433927475976474624> [`Loader`](https://www.asuswebstorage.com/navigate/a/#/s/48727068B8894E2D9AC19AA154B3E85A4)\n\n" +
+                "> **Grupo WhatsApp:** [Click aqui](https://chat.whatsapp.com/BqJU8Ph6F7s39JIbH9HpUL)\n" +
+                "<a:_alerta_:1316557202621988915> Obligatorio: Luego de mandar solicitud para unirse, enviar su numero por DM a un <@&" + roles.VENDOR + "> para que sean aceptados.\n\n" )
             .setColor(config.embedColor)
             .setFooter(config.embedFooter)
+            .setTimestamp()
             .setImage('https://i.ibb.co/mrygpcyg/PROGRAMAS-REQUERIDOS-1.png'),
         menu: menus.menuBypassApkInfo
     },
@@ -867,27 +993,25 @@ module.exports = [
         messageId: '1447043023987933255',
         embed: new EmbedBuilder()
             .setTitle('> HyperV - Bypass ID Informacion')
-            .setDescription("<:Windowsdefender:1433924527926018058>[Desactivar Windows](https://mega.nz/file/t4pGwaRQ#uDFuTSEL0mw5zSpnYMtj1_0FGbQB8SpcLsOdRrk4vpg) - [Tutorial de instalación](https://youtu.be/kGNnJm8vob4)\n" +
-                "<:Regedit:1433924546242674688> [Eliminar Emulador](https://www.asuswebstorage.com/navigate/a/#/s/397E7A3AC777406585B6AC60C02056614) \n" +
-                "<:visualcode:1318276426885103719>  [Requerimientos del panel](https://www.asuswebstorage.com/navigate/a/#/s/2BDD28B35E6E49C7BC6613CF8AC551954) - [Tutorial de instalación](https://youtu.be/DimHrgN9Bp0)\n" +
-                "<:visualcode:1318276426885103719>  [DLL](https://www.asuswebstorage.com/navigate/a/#/s/D6606A1916944E3F9223EA0FFFC6B5234) - [Tutorial de instalación](https://youtu.be/uLnKbGzELVE)\n\n" +
-                "**Emuladores compatibles**\n" +
-                "<a:_alerta_:1316557202621988915>  *`- Compatibles con el panel.`*\n\n" +
-                "<:bluestacks5:1433923976966570135>  [Emulador BlueStacks P64(v5.14)](https://www.asuswebstorage.com/navigate/a/#/s/36339C6867DC4BE9BE5360E63002ED4F4)\n" +
-                "<:bluestacks5:1433923976966570135>  [Emulador BlueStacks P64(v5.22.1001)](https://www.mediafire.com/file/gfyctlqlo8xtsjr/BlueStacks_5.22.exe/file)\n" +
-                "<:msi5:1433924381423177799> [Emulador MSI P64(v5.12)](https://www.mediafire.com/file/2gz19xwx14lctlg/Msi_App.5.12.exe/file)\n\n" +
-                "**Free Fire Versions**\n" +
-                "*`- Compatibles con el panel.`*\n\n" +
-                "<:obb51:1433261279979769856> [Free Fire Normal](https://www.mediafire.com/file/bvx0pi6pxjtlpui/Free_Fire_Normal.xapk/file)\n" +
-                "<:obb51:1433261279979769856> [Free Fire India/Max](https://www.mediafire.com/file/73c2zqnqs3p3qww/Free_Fire_India-Max.xapk/file)\n" +
-                "<:obb51:1433261279979769856> [Free Fire Tela](https://www.mediafire.com/file/y3dchqybqstx17d/FreeFire-X86-Tela.xapk/file)\n\n" +
-                "**Loader HyperV**\n" +
-                "*`- Actualizado 29/10.`*\n\n" +
-                "<:LOGOTIPOLETRASHYPERV:1433266402621653062> [Loader HyperV](https://www.asuswebstorage.com/navigate/a/#/s/A49B04091F6C483D8D143F3F02899AB24?type=previewPageCover)\n\n" +
-                "**Grupo WhatsApp:** [Click aqui](https://chat.whatsapp.com/BqJU8Ph6F7s39JIbH9HpUL)\n" +
-                "<a:_alerta_:1316557202621988915> Obligatorio: Luego de mandar solicitud para unirse, enviar su numero por DM a un <@&" + roles.VENDOR + "> para que sean aceptados.")
+            .setDescription(liston +
+                "> **Requerimientos**\n\n" +
+                "<:Windowsdefender:1433924527926018058> [`Desactivar Antivirus de Windows`](https://www.youtube.com/watch?v=kGNnJm8vob4)\n" +
+                "<:Regedit:1433924546242674688> [`Eliminar Emulador`](https://www.asuswebstorage.com/navigate/a/#/s/40CACD03841D4E828FAEF970B7A82BA44)\n\n" +
+                "> **Versiones de emuladores recomendados**\n\n" +
+                "<:bluestacks5:1433923976966570135>  [`Emulador BlueStacks P64(v5.14)`](https://www.asuswebstorage.com/navigate/a/#/s/CC407177AC7A46A68556131A4800710B4)\n" +
+                "<:bluestacks5:1433923976966570135>  [`Emulador BlueStacks P64(v5.22.1001)`](https://www.asuswebstorage.com/navigate/a/#/s/79BE2AC4E38D4EB0933EA4C4572CEA054)\n" +
+                "<:msi5:1433924381423177799> [`Emulador MSI P64(v5.12)`](https://www.asuswebstorage.com/navigate/a/#/s/7B5BAB5B329F4A7B82B91871EBCC52B34)*\n\n" +
+                "> **Versiones de Free Fire recomendadas**\n\n" +
+                "<:obb51:1433261279979769856> [`Free Fire Normal`](https://www.asuswebstorage.com/navigate/a/#/s/C353F6E1D0204D0B81966733C8D5FF504)\n" +
+                "<:obb51:1433261279979769856> [`Free Fire India/Max`](https://www.asuswebstorage.com/navigate/a/#/s/4065379211D445C9B8914ECEFDF8E5984)\n" +
+                "<:obb51:1433261279979769856> [`Free Fire Tela`](https://www.asuswebstorage.com/navigate/a/#/s/441570DB1E59485E904ED7938B20062F4)\n\n" +
+                "> **Ejecutable del Panel**\n\n" +
+                "<:zeusaa:1433927475976474624> [`Loader`](https://www.asuswebstorage.com/navigate/a/#/s/48727068B8894E2D9AC19AA154B3E85A4)\n\n" +
+                "> **Grupo WhatsApp:** [Click aqui](https://chat.whatsapp.com/BqJU8Ph6F7s39JIbH9HpUL)\n" +
+                "<a:_alerta_:1316557202621988915> Obligatorio: Luego de mandar solicitud para unirse, enviar su numero por DM a un <@&" + roles.VENDOR + "> para que sean aceptados.\n\n" )
             .setColor(config.embedColor)
             .setFooter(config.embedFooter)
+            .setTimestamp()
             .setImage('https://i.ibb.co/mrygpcyg/PROGRAMAS-REQUERIDOS-1.png'),
         menu: menus.menuBypassInfo
     },
@@ -903,6 +1027,7 @@ module.exports = [
                 "<a:_alerta_:1316557202621988915> Obligatorio: Luego de mandar solicitud para unirse, enviar su numero por DM a un <@&" + roles.VENDOR + "> para que sean aceptados.")
             .setColor(config.embedColor)
             .setFooter(config.embedFooter)
+            .setTimestamp()
             .setImage('https://i.ibb.co/mrygpcyg/PROGRAMAS-REQUERIDOS-1.png'),
         menu: menus.menuPaneliOSInfo
     },
@@ -918,6 +1043,7 @@ module.exports = [
                 "<a:_alerta_:1316557202621988915> Obligatorio: Luego de mandar solicitud para unirse, enviar su numero por DM a un <@&" + roles.VENDOR + "> para que sean aceptados.")
             .setColor(config.embedColor)
             .setFooter(config.embedFooter)
+            .setTimestamp()
             .setImage('https://i.ibb.co/mrygpcyg/PROGRAMAS-REQUERIDOS-1.png'),
         menu: menus.menuPaneliOSInfo
     },
@@ -928,69 +1054,80 @@ module.exports = [
         embed: new EmbedBuilder()
             .setTitle('> HyperV - Comisiones')
             .setDescription(
-                "<:HyperVZeus1:1326269368291688479> **Panel Full**\n\n" +
+                "<:zeusaa:1433927475976474624> **Panel Full**\n\n" +
                 "Comisión por soporte: S/10\n\n" +
                 "Semanal: S/10 | 2.65$\n" +
                 "Mensual: S/20 | 5.30$\n" +
                 "Trimestral: S/30 | 8$\n" +
                 "Anual: S/40 | 10.50$\n\n" +
-                "<:HyperVZeus1:1326269368291688479> **Panel Basic**\n\n" +
+                "<:zeusaa:1433927475976474624> **Panel Basic**\n\n" +
                 "Comisión por soporte: S/5\n\n" +
                 "Semanal: S/8 | 2.10$\n" +
                 "Mensual: S/15 | 4$\n" +
                 "Trimestral: S/20 | 5.30$\n" +
                 "Anual: S/30 | 8$\n\n" +
-                "<:HyperVZeus1:1326269368291688479> **Panel Only Aimbot**\n\n" +
+                "<:zeusaa:1433927475976474624> **Panel Only Aimbot**\n\n" +
                 "Comisión por soporte: S/5\n\n" +
                 "Semanal: S/5 | 2.10$\n" +
                 "Mensual: S/10 | 4$\n" +
                 "Trimestral: S/15 | 5.30$\n" +
                 "Anual: S/25 | 8$\n\n" +
-                "<:HyperVZeus1:1326269368291688479> **Bypass APK**\n\n" +
+                "<:zeusaa:1433927475976474624> **Bypass APK**\n\n" +
                 "Comisión por soporte: S/5\n\n" +
                 "Semanal: S/10 | 3$\n" +
                 "14 días: S/15 | 4.5$\n" +
                 "Mensual: S/20 | 5.9$\n" +
                 "60 días: S/30 | 8.9$\n\n" +
-                "<:HyperVZeus1:1326269368291688479> **Bypass ID**\n\n" +
+                "<:zeusaa:1433927475976474624> **Bypass ID**\n\n" +
                 "Comisión por soporte: S/5\n\n" +
                 "Semanal: S/10 | 3$\n" +
                 "14 días: S/15 | 4.5$\n" +
                 "Mensual: S/20 | 5.9$\n" +
                 "60 días: S/30 | 8.9$\n\n" +
-                "<:HyperVZeus1:1326269368291688479> **Menu Chams ESP**\n\n" +
+                "<:zeusaa:1433927475976474624> **Menu Chams ESP**\n\n" +
                 "Comisión por soporte: S/5\n\n" +
                 "Semanal: S/5 | 1.5$\n" +
                 "Mensual: S/15 | 4.5$\n" +
                 "Trimestral: S/20 | 5.9$\n" +
                 "Anual: S/30 | 8.9$\n\n" +
-                "<:HyperVZeus1:1326269368291688479> **Panel iOS**\n\n" +
+                "<:zeusaa:1433927475976474624> **Panel iOS**\n\n" +
                 "Comisión por soporte: S/10\n\n" +
                 "1 día: S/5 | 1.5$\n" +
                 "1 semana: S/15 | 4.5$\n" +
                 "1 mes: S/30 | 8.9$\n\n" +
-                "<:HyperVZeus1:1326269368291688479> **Aimbot Body iOS**\n\n" +
+                "<:zeusaa:1433927475976474624> **Aimbot Body iOS**\n\n" +
                 "Comisión por soporte: S/15\n\n" +
                 "Aimbot Body por temporada: S/20 | 6$\n\n" +
-                "<:HyperVZeus1:1326269368291688479> **Aimlock**\n\n" +
+                "<:zeusaa:1433927475976474624> **Aimlock**\n\n" +
                 "Comisión por soporte: S/15\n\n" +
                 "Anual: S/25 | 7.5$\n\n" +
-                "<:HyperVZeus1:1326269368291688479> **Regedit**\n\n" +
+                "<:zeusaa:1433927475976474624> **Panel Android**\n\n" +
+                "Comisión por soporte: S/10\n\n" +
+                "Semanal: S/10 | 3$\n" +
+                "14 dias: S/15 | 3.5$\n" +
+                "Mensual: S/20 | 5.9$\n" +
+                "60 dias: S/30 | 8.9$\n\n" +
+                "<:zeusaa:1433927475976474624> **Panel COD iOS**\n\n" +
+                "Comisión por soporte: S/10\n\n" +
+                "1 dia: S/5 | 1.5$\n" +
+                "Semanal: S/8 | 2.1$\n" +
+                "Mensual: S/10 | 3$\n\n" +
+                "<:zeusaa:1433927475976474624> **Regedit**\n\n" +
                 "Comisión por soporte: S/15\n\n" +
                 "Mensual: S/15 | 4$\n" +
                 "Anual: S/30 | 8$\n\n" +
-                "<:HyperVZeus1:1326269368291688479> **Holograma Android**\n\n" +
+                "<:zeusaa:1433927475976474624> **Holograma Android**\n\n" +
                 "Comisión por soporte: S/10\n\n" +
                 "Holograma por temporada: S/15 | 4.5$\n\n" +
-                "<:HyperVZeus1:1326269368291688479> **Aimbot Color**\n\n" +
+                "<:zeusaa:1433927475976474624> **Aimbot Color**\n\n" +
                 "Comisión por soporte: S/10\n\n" +
                 "Semanal: S/10 | 2.96$\n" +
                 "Mensual: S/20 | 6$\n" +
                 "Trimestral: S/30 | 9$\n\n" +
-                "<:HyperVZeus1:1326269368291688479> **Spoofer**\n\n" +
+                "<:zeusaa:1433927475976474624> **Spoofer**\n\n" +
                 "Comisión por soporte: S/15\n\n" +
                 "Permanente: S/30 | 9$\n\n" +
-                "<:HyperVZeus1:1326269368291688479> **Boost rank**\n\n" +
+                "<:zeusaa:1433927475976474624> **Boost rank**\n\n" +
                 "No hay comisiones fijas"
             )
             .setColor(config.embedColor)

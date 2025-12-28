@@ -85,7 +85,7 @@ module.exports = {
         title: '> Métodos de Pago - Bolivia <:flagbolivia:1232045288118550648>',
         description: 'Contamos con los siguientes métodos de pago disponibles en Bolivia:',
         methods: [
-            { name: '- Banco Unión', available: true }
+            { name: '- Banco Sol', available: true }
         ],
     },
 
@@ -265,10 +265,10 @@ module.exports = {
         },
 
         bancounion: {
-            title: 'Datos Banco Unión Bolivia',
-            holder: 'Genoveva Mamani',
-            bank: 'Banco Unión',
-            qrCode: 'https://i.ibb.co/FFphw2L/image.png',
+            title: 'Datos Banco Sol Bolivia',
+            holder: 'Yarela Rodriguez',
+            bank: 'Banco Sol',
+            qrCode: 'https://i.ibb.co/R4gR2JzT/Captura-de-pantalla-2025-12-28-164944.png',
             thumbnail: 'https://i.ibb.co/tpHskrTy/banco-union-logo-png-seeklogo-552924-removebg-preview.png',
             instructions: 'Transferencia QR. Envía el comprobante de depósito'
         },

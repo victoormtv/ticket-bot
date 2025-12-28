@@ -26,6 +26,9 @@ module.exports = {
       config.embeds.AIMBOT_COLOR,
       config.embeds.SPOOFER,
       config.embeds.BOOST_RANK,
+      config.embeds.PANEL_CSGO,
+      config.embeds.PANEL_COD_IOS,
+      config.embeds.PANEL_ANDROID,
       config.embeds.PANEL_WARZONE,
       config.embeds.NITRO,
       config.embeds.WEBSITE,
@@ -43,7 +46,6 @@ module.exports = {
       config.embeds.BYPASS_ID_INFO,
       config.embeds.PANEL_IOS_INFO,
       config.embeds.AIMBOT_BODY_INFO,
-      config.embeds.LOGIN_VENTAS,
       config.embeds.INFO_COMANDOS,
       config.embeds.COMISIONES_INFO,
       config.channels.LOGIN_VENTAS
