@@ -94,31 +94,59 @@ module.exports = {
                 name: `reporte-ventas${mesNombre}-${año}.xlsx`
             });
 
+            // Separar ventas normales y upgrades
+            const ventasNormales = ventasFiltradas.filter(v => v.tipoVenta !== 'upgrade');
+            const ventasUpgrade = ventasFiltradas.filter(v => v.tipoVenta === 'upgrade');
+
             const totalVentas = ventasFiltradas.length;
-            const totalIngresos = ventasFiltradas.reduce((sum, v) => sum + (v.precioRealSoles || v.precioEstandar), 0);
-            const totalComisionesVenta = ventasFiltradas.reduce((sum, v) => sum + v.comisionVenta, 0);
-            const totalComisionesSoporte = ventasFiltradas.reduce((sum, v) => sum + v.comisionSoporte, 0);
+            const totalVentasNormales = ventasNormales.length;
+            const totalUpgrades = ventasUpgrade.length;
+
+            // Ingresos
+            const ingresosNormales = ventasNormales.reduce((sum, v) => sum + (v.precioRealSoles || v.precioEstandar || 0), 0);
+            const ingresosUpgrades = ventasUpgrade.reduce((sum, v) => sum + (v.montoNetoSoles || 0), 0);
+            const totalIngresos = ingresosNormales + ingresosUpgrades;
+
+            // Comisiones
+            const comisionVentaNormal = ventasNormales.reduce((sum, v) => sum + (v.comisionVenta || 0), 0);
+            const comisionVentaUpgrade = ventasUpgrade.reduce((sum, v) => sum + (v.comisionVendedor || 0), 0);
+            const totalComisionesVenta = comisionVentaNormal + comisionVentaUpgrade;
+            const totalComisionesSoporte = ventasNormales.reduce((sum, v) => sum + (v.comisionSoporte || 0), 0);
             const totalComisiones = totalComisionesVenta + totalComisionesSoporte;
             
-            const ventasConDescuento = ventasFiltradas.filter(v => v.tipoAjuste === 'descuento').length;
-            const ventasConPropina = ventasFiltradas.filter(v => v.tipoAjuste === 'propina').length;
-            const ventasNormales = ventasFiltradas.filter(v => v.tipoAjuste === 'ninguno').length;
+            // Ajustes (solo ventas normales)
+            const ventasConDescuento = ventasNormales.filter(v => v.tipoAjuste === 'descuento').length;
+            const ventasConPropina = ventasNormales.filter(v => v.tipoAjuste === 'propina').length;
+            const ventasSinAjuste = ventasNormales.filter(v => v.tipoAjuste === 'ninguno').length;
 
             const embed = new EmbedBuilder()
                 .setTitle('> HyperV - Reporte de Ventas')
-                .setDescription(`**Periodo:** ${mes ? `Mes ${mes}/${año}` : `Año ${año}`}`)
+                .setDescription(`**Periodo:** ${mes ? `Mes ${mes}/${año}` : `Año ${año}`}\n\n📊 **Resumen General**`)
                 .addFields(
-                    { name: 'Total Ventas', value: `${totalVentas}`, inline: true },
-                    { name: 'Ingresos Totales', value: `S/ ${totalIngresos.toFixed(2)}`, inline: true },
-                    { name: 'Total Comisiones', value: `S/ ${totalComisiones.toFixed(2)}`, inline: true },
-                    { name: 'Comisiones Venta', value: `S/ ${totalComisionesVenta.toFixed(2)}`, inline: true },
-                    { name: 'Comisiones Soporte', value: `S/ ${totalComisionesSoporte.toFixed(2)}`, inline: true },
-                    { name: 'Archivo Generado', value: `\`${attachment.name}\``, inline: true },
-                    { name: 'Ventas Normales', value: `${ventasNormales}`, inline: true },
+                    { name: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', value: '\u200b', inline: false },
+                    { name: 'Ventas Totales', value: `**${totalVentas}**`, inline: true },
+                    { name: 'Ingresos Totales', value: `**S/ ${totalIngresos.toFixed(2)}**`, inline: true },
+                    { name: 'Comisiones', value: `**S/ ${totalComisiones.toFixed(2)}**`, inline: true },
+                    { name: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', value: '\u200b', inline: false },
+                    { name: 'Ventas Normales', value: `${totalVentasNormales} (${((totalVentasNormales/totalVentas)*100).toFixed(1)}%)`, inline: true },
+                    { name: 'Upgrades', value: `${totalUpgrades} (${totalUpgrades > 0 ? ((totalUpgrades/totalVentas)*100).toFixed(1) : '0.0'}%)`, inline: true },
+                    { name: '\u200b', value: '\u200b', inline: true },
+                    { name: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', value: '\u200b', inline: false },
+                    { name: 'Ingresos Normales', value: `S/ ${ingresosNormales.toFixed(2)}`, inline: true },
+                    { name: 'Ingresos Upgrades', value: `S/ ${ingresosUpgrades.toFixed(2)}`, inline: true },
+                    { name: '\u200b', value: '\u200b', inline: true },
+                    { name: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', value: '\u200b', inline: false },
+                    { name: 'Com. Ventas', value: `S/ ${comisionVentaNormal.toFixed(2)}`, inline: true },
+                    { name: 'Com. Upgrades (30%)', value: `S/ ${comisionVentaUpgrade.toFixed(2)}`, inline: true },
+                    { name: 'Com. Soporte', value: `S/ ${totalComisionesSoporte.toFixed(2)}`, inline: true },
+                    { name: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', value: '\u200b', inline: false },
+                    { name: 'Sin Ajuste', value: `${ventasSinAjuste}`, inline: true },
                     { name: 'Con Descuento', value: `${ventasConDescuento}`, inline: true },
-                    { name: 'Con Propina', value: `${ventasConPropina}`, inline: true }
+                    { name: 'Con Propina', value: `${ventasConPropina}`, inline: true },
+                    { name: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', value: '\u200b', inline: false },
+                    { name: '📄 Archivo Generado', value: `\`${attachment.name}\``, inline: false }
                 )
-                .setColor(config.embedColor || '#00ff00')
+                .setColor(config.embedColor)
                 .setFooter({ text: `Generado por ${interaction.user.username}` })
                 .setTimestamp();
 
@@ -128,7 +156,7 @@ module.exports = {
                 ephemeral: true
             });
 
-            console.log(`✅ Reporte generado exitosamente por ${interaction.user.tag}`);
+            console.log(`✅ Reporte generado: ${totalVentasNormales} normales + ${totalUpgrades} upgrades = ${totalVentas} total (${interaction.user.tag})`);
 
         } catch (error) {
             console.error('❌ Error generando reporte:', error);

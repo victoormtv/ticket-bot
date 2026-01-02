@@ -47,8 +47,7 @@ module.exports = {
       config.embeds.PANEL_IOS_INFO,
       config.embeds.AIMBOT_BODY_INFO,
       config.embeds.INFO_COMANDOS,
-      config.embeds.COMISIONES_INFO,
-      config.channels.LOGIN_VENTAS
+      config.embeds.COMISIONES_INFO
     ];
 
     const uniqueChannels = [...new Set(channelsToClean)];

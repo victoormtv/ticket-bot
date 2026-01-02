@@ -81,21 +81,23 @@ const commissionRules = {
     },
 };
 
+// ⚡ ACTUALIZADO: BOB y COP ahora tienen tasa fija
 const exchangeRatesFijas = {
     'PEN': 1,
     'Soles': 1,
     'ARS': 1/600,
     'MXN': 1/6.20,
     'CLP': 1/270,
-    'COP': null,
+    'COP': 1/5000, // ⚡ NUEVO: 5000 COP = 1 USD (fijo)
+    'BOB': 1/12,   // ⚡ NUEVO: 12 BOB = 1 USD (fijo)
 };
 
+// ⚡ ACTUALIZADO: BOB y COP removidos de tasas dinámicas
 let exchangeRatesDinamicas = {
     'USD': 3.75,
     'DOP': 0.063,
     'UYU': 0.095,
     'GTQ': 0.48,
-    'BOB': 0.54,
     'BRL': 0.62,
     'EUR': 4.10,
 };
@@ -104,6 +106,7 @@ const comisionesFijasPorMoneda = {
     'ARS': 1900 / 600
 };
 
+// ⚡ ACTUALIZADO: Zelle y CashApp ahora tienen comisión como PayPal
 const comisionesMetodoPago = {
     'PayPal': {
         porcentaje: 5.4,
@@ -125,9 +128,10 @@ const comisionesMetodoPago = {
         fijo: 0,
         moneda: 'USD'
     },
+    // ⚡ ACTUALIZADO: CashApp ahora tiene comisión igual que PayPal
     'CashApp': { 
-        porcentaje: 0, 
-        fijo: 0, 
+        porcentaje: 5.4,
+        fijo: 0.30,
         moneda: 'USD' 
     },
     'CashApp Business': { 
@@ -165,9 +169,13 @@ const comisionesMetodoPago = {
     'Interbank Dolares': { porcentaje: 0, fijo: 0, moneda: 'USD' },
     'Scotiabank Soles': { porcentaje: 0, fijo: 0, moneda: 'PEN' },
     'BBVA Soles': { porcentaje: 0, fijo: 0, moneda: 'PEN' },
-    'Zelle': { porcentaje: 0, fijo: 0, moneda: 'USD' },
+    'Zelle': { 
+        porcentaje: 5.4,
+        fijo: 0.30,
+        moneda: 'USD' 
+    },
     'Nequi': { porcentaje: 0, fijo: 0, moneda: 'COP' },
-    'Banco Union': { porcentaje: 0, fijo: 0, moneda: 'BOB' },
+    'Banco Sol': { porcentaje: 0, fijo: 0, moneda: 'BOB' },
     'Spin Oxxo': { porcentaje: 0, fijo: 0, moneda: 'MXN' },
     'Clabe Nubank': { porcentaje: 0, fijo: 0, moneda: 'MXN' },
     'CBU Mercado Pago': { porcentaje: 0, fijo: 0, moneda: 'ARS' },
@@ -177,6 +185,7 @@ const comisionesMetodoPago = {
     'otro': { porcentaje: 0, fijo: 0, moneda: 'PEN' }
 };
 
+// ⚡ ACTUALIZADO: La función ya no actualiza BOB ni COP porque ahora son fijas
 async function actualizarTasasDeCambio() {
     try {
         const API_KEY = process.env.EXCHANGE_RATE_API_KEY || 'f4ab0c0ecc7a54a52cced91e';
@@ -186,21 +195,18 @@ async function actualizarTasasDeCambio() {
         if (response.data && response.data.result === 'success') {
             const rates = response.data.conversion_rates;
             
+            // Actualizar solo las tasas dinámicas
             exchangeRatesDinamicas['USD'] = 1 / rates.USD;
             exchangeRatesDinamicas['DOP'] = 1 / rates.DOP;
             exchangeRatesDinamicas['UYU'] = 1 / rates.UYU;
             exchangeRatesDinamicas['GTQ'] = 1 / rates.GTQ;
-            exchangeRatesDinamicas['BOB'] = 1 / rates.BOB;
             exchangeRatesDinamicas['BRL'] = 1 / rates.BRL;
             exchangeRatesDinamicas['EUR'] = 1 / rates.EUR;
             
-            const copToUsd = 1 / 5000;
-            const usdToPen = 1 / rates.USD;
-            exchangeRatesDinamicas['COP'] = copToUsd * usdToPen;
-            
             console.log('✅ Tasas de cambio actualizadas:', new Date().toLocaleString());
-            console.log('USD a PEN:', exchangeRatesDinamicas['USD'].toFixed(4));
-            console.log('COP a PEN:', exchangeRatesDinamicas['COP'].toFixed(6));
+            console.log('💵 USD a PEN:', exchangeRatesDinamicas['USD'].toFixed(4));
+            console.log('🔒 BOB a USD: 1/12 (fijo)');
+            console.log('🔒 COP a USD: 1/5000 (fijo)');
             
             return true;
         } else {
@@ -214,11 +220,24 @@ async function actualizarTasasDeCambio() {
     }
 }
 
+// ⚡ ACTUALIZADO: Prioriza tasas fijas antes de las dinámicas
 function convertToSoles(cantidad, moneda) {
+    // Primero verificar si existe una tasa fija
     if (exchangeRatesFijas[moneda] !== undefined && exchangeRatesFijas[moneda] !== null) {
-        return cantidad * exchangeRatesFijas[moneda];
+        const tasaFija = exchangeRatesFijas[moneda];
+        
+        // Para BOB y COP: convertir primero a USD, luego a PEN
+        if (moneda === 'BOB' || moneda === 'COP') {
+            const cantidadUSD = cantidad * tasaFija; // A dólares
+            const usdToPen = exchangeRatesDinamicas['USD'] || 3.75; // USD a PEN
+            return cantidadUSD * usdToPen; // USD a Soles
+        }
+        
+        // Para otras monedas con tasa fija
+        return cantidad * tasaFija;
     }
     
+    // Si no hay tasa fija, usar la dinámica
     const tasa = exchangeRatesDinamicas[moneda] || 1;
     return cantidad * tasa;
 }
@@ -299,6 +318,43 @@ function obtenerTasaCambio(moneda) {
     };
 }
 
+function calcularUpgrade(precioOriginal, precioNuevo, montoCobrado, moneda, metodoPago) {
+    if (precioNuevo <= precioOriginal) {
+        return {
+            esValido: false,
+            error: `El plan nuevo (S/ ${precioNuevo}) debe ser más caro que el plan original (S/ ${precioOriginal})`
+        };
+    }
+    
+    const diferenciaEsperada = precioNuevo - precioOriginal;
+    const detallesPago = calcularMontoNeto(montoCobrado, metodoPago, moneda);
+    const montoNetoSoles = convertToSoles(detallesPago.montoNeto, moneda);
+    const comisionMetodoPagoSoles = convertToSoles(detallesPago.comisionTotal, moneda);
+    
+    const tolerancia = 0.10;
+    if (montoNetoSoles < (diferenciaEsperada * (1 - tolerancia))) {
+        return {
+            esValido: false,
+            error: `El monto cobrado (S/ ${montoNetoSoles.toFixed(2)} neto) es muy bajo. Se esperaba al menos S/ ${(diferenciaEsperada * (1 - tolerancia)).toFixed(2)}`
+        };
+    }
+    
+    const comisionVendedor = diferenciaEsperada * 0.30;
+    
+    return {
+        esValido: true,
+        diferenciaEsperada: diferenciaEsperada,
+        montoBruto: montoCobrado,
+        montoNeto: detallesPago.montoNeto,
+        montoNetoSoles: montoNetoSoles,
+        comisionMetodoPago: detallesPago.comisionTotal,
+        comisionMetodoPagoSoles: comisionMetodoPagoSoles,
+        comisionVendedor: comisionVendedor,
+        comisionSoporte: 0,
+        porcentajeComision: 30
+    };
+}
+
 module.exports = { 
     commissionRules, 
     getCommission, 
@@ -310,5 +366,6 @@ module.exports = {
     comisionesMetodoPago,
     calcularMontoNeto,
     obtenerTasaCambio,
-    calcularAjusteAutomatico
+    calcularAjusteAutomatico,
+    calcularUpgrade
 };

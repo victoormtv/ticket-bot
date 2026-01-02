@@ -6,9 +6,9 @@ const config = require('../data/config');
 
 const DATA_FILE = path.join(__dirname, '../data/inactiveTickets.json');
 
-const WARNING_TIME = 20 * 60 * 60 * 1000;
-const CLOSE_TIME = 24 * 60 * 60 * 1000;
-const DELETE_TIME = 24 * 60 * 60 * 1000;
+const WARNING_TIME = 2 * 60 * 60 * 1000; // 2 horas sin respuesta del cliente
+const CLOSE_TIME = 1 * 60 * 60 * 1000;   // 1 hora sin respuesta del cliente
+const DELETE_TIME = 4 * 60 * 60 * 1000; // 4 horas después de cerrar
 
 function loadData() {
   try {
@@ -31,29 +31,38 @@ function saveData(data) {
   }
 }
 
-async function updateTicketActivity(channelId) {
+async function updateTicketActivity(channelId, userId, isStaff = false) {
   const data = loadData();
-  data.tickets[channelId] = {
-    lastActivity: Date.now(),
-    warningGiven: false,
-    closed: false,
-    closedAt: null
-  };
+  
+  if (!data.tickets[channelId]) {
+    data.tickets[channelId] = {
+      ownerId: userId,
+      lastClientActivity: Date.now(),
+      warningGiven: false,
+      closed: false,
+      closedAt: null
+    };
+  } else if (!isStaff) {
+    data.tickets[channelId].lastClientActivity = Date.now();
+    data.tickets[channelId].warningGiven = false;
+  }
+  
   saveData(data);
-  console.log(`✅ Actividad actualizada para ticket: ${channelId}`);
+  console.log(`✅ Actividad actualizada para ticket: ${channelId} (Staff: ${isStaff})`);
 }
 
-async function registerNewTicket(channelId) {
+async function registerNewTicket(channelId, ownerId) {
   const data = loadData();
   if (!data.tickets[channelId]) {
     data.tickets[channelId] = {
-      lastActivity: Date.now(),
+      ownerId: ownerId,
+      lastClientActivity: Date.now(),
       warningGiven: false,
       closed: false,
       closedAt: null
     };
     saveData(data);
-    console.log(`🆕 Nuevo ticket registrado: ${channelId}`);
+    console.log(`🆕 Nuevo ticket registrado: ${channelId} - Owner: ${ownerId}`);
   }
 }
 
@@ -85,14 +94,13 @@ async function checkInactiveTickets(client) {
 
     for (const [channelId, channel] of ticketChannels) {
       if (!data.tickets[channelId]) {
-        await registerNewTicket(channelId);
-        continue;
+        continue; 
       }
 
       const ticketData = data.tickets[channelId];
-      const timeSinceLastActivity = now - ticketData.lastActivity;
+      const timeSinceLastActivity = now - ticketData.lastClientActivity;
 
-      // ====== ELIMINAR CANAL (48h después del cierre) ======
+      // ====== ELIMINAR CANAL (4h después del cierre) ======
       if (ticketData.closed && ticketData.closedAt) {
         const timeSinceClosed = now - ticketData.closedAt;
         
@@ -110,13 +118,13 @@ async function checkInactiveTickets(client) {
         }
       }
 
-      // ====== CERRAR TICKET (24h sin actividad) ======
+      // ====== CERRAR TICKET (1h sin actividad del cliente) ======
       if (timeSinceLastActivity >= CLOSE_TIME && !ticketData.closed) {
         console.log(`🔒 Cerrando ticket por inactividad: ${channel.name}`);
         
         const closeEmbed = new EmbedBuilder()
           .setTitle('> HyperV - Ticket Cerrado Automáticamente')
-          .setDescription('⏰ Este ticket ha sido cerrado automáticamente por inactividad (24 horas sin mensajes).\n\n**El canal será eliminado en 24 horas.**\n\nSi necesitas ayuda nuevamente, crea un nuevo ticket.')
+          .setDescription('⏰ Este ticket ha sido cerrado automáticamente por inactividad (**1 hora** sin respuesta del cliente).\n\n**El canal será eliminado en 4 horas.**\n\nSi necesitas ayuda nuevamente, crea un nuevo ticket.')
           .setColor(0xFF0000)
           .setFooter(config.embedFooter)
           .setTimestamp();
@@ -128,7 +136,7 @@ async function checkInactiveTickets(client) {
           data.tickets[channelId].closedAt = now;
           saveData(data);
 
-          await channel.setName(`🔒-${channel.name}`);
+          await channel.setName(`🔒-${channel.name.replace('🔒-', '')}`);
           
           console.log(`✅ Ticket cerrado exitosamente`);
         } catch (error) {
@@ -137,19 +145,22 @@ async function checkInactiveTickets(client) {
         continue;
       }
 
-      // ====== ENVIAR ADVERTENCIA (20h sin actividad) ======
+      // ====== ENVIAR ADVERTENCIA ======
       if (timeSinceLastActivity >= WARNING_TIME && !ticketData.warningGiven && !ticketData.closed) {
         console.log(`⚠️ Enviando advertencia a: ${channel.name}`);
         
         const warningEmbed = new EmbedBuilder()
-          .setTitle('> HyperV - Advertencia de Inactividad')
-          .setDescription('⚠️ **Este ticket se cerrará automáticamente en 4 horas por inactividad.**\n\nSi aún necesitas ayuda, envía un mensaje en este canal.')
+          .setTitle('> HyperV - Recordatorio de Ticket')
+          .setDescription(`⚠️ Este ticket lleva **2 horas sin respuesta**.\n\nPor favor, responde si aún necesitas ayuda. El ticket se cerrará automáticamente después de **1 hora** de inactividad total.`)
           .setColor(0xFFAA00)
           .setFooter(config.embedFooter)
           .setTimestamp();
 
         try {
-          await channel.send({ embeds: [warningEmbed] });
+          await channel.send({ 
+            content: `<@${ticketData.ownerId}>`,
+            embeds: [warningEmbed] 
+          });
           
           data.tickets[channelId].warningGiven = true;
           saveData(data);

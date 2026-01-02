@@ -19,11 +19,11 @@ module.exports = {
     ], 'Selecciona una opción'),
 
     menuPanelPCGratis: createMenu([
-        { label: 'Pide tu Panel aqui', emoji: '<:compra:1316171968717918379>', description: 'Abre ticket', value: 'compra-panel' }
+        { label: 'Pide tu Panel aqui', emoji: '<:compra:1316171968717918379>', description: 'Abre ticket', value: 'panel-gratis' }
     ], 'Selecciona un plan'),
 
     menuBypassGratis: createMenu([
-        { label: 'Pide tu Bypass aqui',  emoji: '<:compra:1316171968717918379>', description: 'Abre ticket', value: 'compra-bypass' }
+        { label: 'Pide tu Bypass aqui',  emoji: '<:compra:1316171968717918379>', description: 'Abre ticket', value: 'bypass-gratis' }
     ], 'Selecciona un plan'),
 
     menuPromociones: createMenu([

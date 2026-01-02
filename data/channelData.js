@@ -10,7 +10,7 @@ module.exports = [
         id: ids.embeds.TICKET_GENERAL,
         messageId: '1430729743111819304',
         embed: new EmbedBuilder()
-            .setTitle('> Ticket General') // ticket general
+            .setTitle('> HyperV - Ticket General') // ticket general
             .setDescription(
                 "<:zeusaa:1433927475976474624> **Instrucciones para Abrir un Ticket**\n\n" +
                 "Para facilitar la realización de una compra o para hacer una consulta relacionada con el producto, te invitamos a abrir un ticket. Este proceso nos permitirá atender tus necesidades de manera más eficiente y brindarte la asistencia adecuada. \n\n" +
@@ -39,6 +39,24 @@ module.exports = [
             .setFooter(config.embedFooter)
             .setImage(config.defaultImage),
         menu: menus.menuTicketGeneral
+    },
+
+    {
+        id: ids.embeds.REGLAS,
+        messageId: '1430729743111819304',
+        embed: new EmbedBuilder()
+            .setTitle('> HyperV - Reglas') // Reglas
+            .setDescription(
+                "<a:MultiGames_Libro:1317202185402187847> Está prohibido el uso de lenguaje ofensivo, insultos y cualquier forma de comportamiento tóxico. Todos los miembros deben contribuir a un ambiente de respeto y cordialidad.\n\n" +
+                "<a:MultiGames_Libro:1317202185402187847> No te hagas pasar por otra persona ni utilices imágenes de perfil inapropiadas. Además, se prohíben los nombres de usuario y las imágenes que sean ofensivas, irrespetuosas o que no cumplan con las normas de la comunidad.\n\n" +
+                "<a:MultiGames_Libro:1317202185402187847> No se permite realizar ventas ni ofrecer servicios que no estén autorizados por las normas del servidor. Cualquier tipo de actividad comercial no aprobada está estrictamente prohibida.\n\n" +
+                "<a:MultiGames_Libro:1317202185402187847> Está estrictamente prohibido realizar cualquier tipo de spam, incluyendo promociones de redes sociales, anuncios de otros servidores o contenido que no esté relacionado con la comunidad. Mantengamos el enfoque en las conversaciones relevantes y constructivas.\n\n" +
+                "<a:MultiGames_Libro:1317202185402187847> No se deben hacer menciones innecesarias a otros miembros, ya que esto puede resultar molesto y disruptivo para la comunidad. Utiliza las menciones de manera responsable y solo cuando sea realmente necesario.\n\n" +
+                "<a:MultiGames_Libro:1317202185402187847> Está estrictamente prohibido enviar contenido no seguro para el trabajo (NSFW), incluyendo material sugerente o de naturaleza +18. Mantenemos un ambiente seguro y apropiado para todos los miembros de la comunidad.\n\n" +
+                "<a:MultiGames_Libro:1317202185402187847> No se permite pedir regalos o donaciones, como por ejemplo, solicitar Nitro. Fomentamos un ambiente de apoyo mutuo, pero las solicitudes directas de regalos no son bienvenidas.\n\n")
+            .setColor(config.embedColor)
+            .setFooter(config.embedFooter)
+            .setImage(config.defaultImage)
     },
 
     {
@@ -768,68 +786,63 @@ module.exports = [
     },
 
     {
-        id: ids.embeds.LOGIN_VENTAS,
-        messageId: '1454537257347321867',
-        embed: new EmbedBuilder()
-            .setTitle('> HyperV - Registro de Ventas')
-            .setDescription(
-                "Se usará el comando `/venta` **SOLO EN ESTE CANAL** para registrar las ventas de cualquier producto.\n\n" +
-                "**DATOS A INGRESAR:**\n" +
-                "- Usuario\n" +
-                "- Método de Pago\n" +
-                "- Producto\n" +
-                "- Período\n" +
-                "- Precio cobrado\n" +
-                "- Moneda\n" +
-                "- Soporte\n" +
-                "- Producto Adicional + Periodo Adicional (OPCIONAL POR SI VENDEN DOS PRODUCTOS JUNTOS COMO PANEL + BYPASS)" +
-                "- Comprobante de pago\n" +
-                "- WhatsApp (OPCIONAL)\n" +
-                "- Nota (OPCIONAL)\n\n" +
-                "**CÁLCULO DE PRECIOS, DESCUENTOS Y PROPINAS:**\n" +
-                "- El bot calcula automáticamente el monto neto recibido según el método de pago y la moneda.\n" +
-                "- Si el precio ingresado es **menor** al precio estándar, se registra como **DESCUENTO** y ajusta **SOLO** la comisión del vendedor.\n" +
-                "- Si el precio ingresado es **mayor** al precio estándar, se registra como **PROPINA** y será asignada **ÚNICAMENTE** al vendedor.\n" +
-                "- Si el precio ingresado está dentro de un margen pequeño frente al precio estándar, se considera una venta **NORMAL**.\n\n" +
-                "<a:_alerta_:1316557202621988915> **IMPORTANTE**:\n" +
-                "- Ingresar un precio distinto al comprobante subido será verificado por <@1117934669002965014> y descontará la venta hecha.\n" +
-                "- No habrán propinas extras ya que el bot calculará automáticamente el monto que llegó.\n" +
-                "- El bot calculará las conversiones de acuerdo a los tipos de cambio de cada país que están indicados en https://discord.com/channels/1117932314102595716/1117939385816580217.\n" +
-                "- El bot también calculará el descuento de comisión que hace PayPal y demás métodos de pago.\n" +
-                "- El bot actualizará diariamente de acuerdo a **ExchangeRate** según el cambio del resto de países que no tienen un tipo de cambio fijo.\n\n" +
-                "**GENERACIÓN AUTOMÁTICA DE LICENCIAS:**\n" +
-                "Una vez la venta haya sido registrada, el bot automáticamente responderá tu mensaje con una **Licencia de KeyAuth** (de acuerdo al producto vendido y su duración) para que sea entregada al cliente **SOLO SI <@1117934669002965014> CONFIRMÓ EL PAGO**.\n\n" +
-                "**REPORTES MENSUALES:**\n" +
-                "Un usuario con rol de **ADMINISTRADOR** podrá usar el comando `/reporte-mensual` para generar un Excel con información completa sobre las ventas.\n\n" +
-                "**CONTENIDO DEL REPORTE:**\n" +
-                "- Ventas totales\n" +
-                "- Ingresos Totales (en soles)\n" +
-                "- Total de comisiones por ventas\n" +
-                "- Total de comisiones por soporte\n" +
-                "- Ventas normales, con descuento y con propina\n" +
-                "- Vendedor con más y menos ventas\n" +
-                "- Productos más y menos vendidos\n" +
-                "- Períodos de productos más y menos vendidos\n" +
-                "- Tabla con todas las ventas totales\n" +
-                "- Tabla con comisiones y ventas de cada vendedor\n\n" +
-                "**ELIMINACIÓN DE VENTAS:**\n" +
-                "Para eliminar una venta mal ingresada:\n" +
-                "- Opción 1: Borrar el mensaje para que no sea contabilizado\n" +
-                "- Opción 2: Usar el comando `/eliminar-venta` y seleccionar el número de venta a eliminar (también deberá borrar su mensaje)\n\n" +
-                "<a:_alerta_:1316557202621988915> **COMANDO DISPONIBLE** <a:_alerta_:1316557202621988915>"
-            )
-            .setColor(config.embedColor)
-            .setFooter(config.embedFooter)
-    },
+    id: ids.embeds.LOGIN_VENTAS,
+    messageId: '1455736865737933003',
+    embed: new EmbedBuilder()
+        .setTitle('> HyperV - Registro de Ventas')
+        .setDescription(
+            "Se usará el comando `/venta` solo en https://discord.com/channels/1117932314102595716/1435397350049714206. El soporte deberá reaccionar a la venta **OBLIGATORIAMENTE** si es requerido.\n\n" +
+            "**__DATOS A INGRESAR:__**\n" +
+            "- Método de Pago\n" +
+            "- Producto\n" +
+            "- Período\n" +
+            "- Precio cobrado\n" +
+            "- Moneda\n" +
+            "- **Requiere Soporte** (Sí/No - Default: Sí)\n" +
+            "- Comprobante de pago\n" +
+            "- WhatsApp\n" +
+            "- Producto Adicional + Período Adicional (OPCIONAL para combos)\n" +
+            "- Nota (OPCIONAL)\n\n" +
+            "**__SISTEMA DE SOPORTE:__**\n" +
+            "- Si la venta requiere soporte, el equipo debe reaccionar con ✅ en las primeras **12 horas**.\n" +
+            "- Solo **un soporte** puede estar asignado a la vez.\n" +
+            "- Recordatorios automáticos: **10 minutos** inicial, luego **cada hora** hasta las 12 horas.\n" +
+            "- Después de **12 horas sin asignar**, la venta se bloquea automáticamente.\n" +
+            "- Ventas sin soporte requerido no permiten reacciones.\n\n" +
+            "**__CÁLCULO AUTOMÁTICO:__**\n" +
+            "- El bot calcula el monto neto según método de pago, moneda y comisiones.\n" +
+            "- **Descuento**: Si el precio es menor al estándar (afecta solo comisión del vendedor).\n" +
+            "- **Propina**: Si el precio es mayor al estándar (beneficia solo al vendedor).\n" +
+            "- Tipo de cambio actualizado diariamente vía ExchangeRate API.\n" +
+            "- Tasas fijas para algunos metodos de pago.\n" +
+            "- Comisiones aplicadas a algunos metodos de pago.\n\n" +
+            "**__LICENCIAS AUTOMÁTICAS:__**\n" +
+            "El bot genera licencias KeyAuth para Panel Full, Panel Secure, Panel Only Aimbot y Menu Chams tras registrar la venta.\n\n" +
+            "**__UPGRADES:__**\n" +
+            "Usa `/upgrade` para cambiar el plan de un cliente. El bot responde automáticamente a la venta original y aplica las mismas reglas de soporte y recordatorios.\n\n" +
+            "**__REPORTES:__**\n" +
+            "Los admins pueden usar `/reporte-mensual` para generar un Excel con: ventas totales, ingresos, comisiones, productos más vendidos, y detalle completo de cada venta.\n\n" +
+            "**__COMANDOS ADICIONALES:__**\n" +
+            "- `/eliminar-venta`: Eliminar ventas mal ingresadas.\n\n" +
+            "<a:_alerta_:1316557202621988915> **IMPORTANTE**:\n" +
+            "- Ingresar precios falsos será verificado por <@1117934669002965014> y resultará en descuento de la venta.\n" +
+            "- Soportes pueden desmarcar ventas para reasignarlas sin afectar comisiones.\n" +
+            "- Elimina ventas incorrectas borrando el mensaje o usando `/eliminar-venta`.\n\n" +
+            "<a:_alerta_:1316557202621988915> **COMANDO DISPONIBLE DESDE EL 1 DE ENERO DEL 2026** <a:_alerta_:1316557202621988915>"
+        )
+        .setColor(config.embedColor)
+        .setFooter(config.embedFooter)
+},
 
     {
         id: ids.embeds.INFO_COMANDOS,
-        messageId: '1450949464125866226',
+        messageId: '1455736867944402984',
         embed: new EmbedBuilder()
             .setTitle('> HyperV - Comandos')
             .setDescription(
                 "<a:_alerta_:1316557202621988915> **COMANDOS DISPONIBLES** <a:_alerta_:1316557202621988915>\n\n" +
                 "- Comando `/venta` para registrar las ventas de cualquier producto.\n\n" +
+                "- Comando `/upgrade` para aumentar o cambiar algun producto pagando la diferencia de precio.\n\n" +
                 "- Comando `/precio` para listar los precios de cualquier producto mas sus caracteristicas. Escoger el producto a vender.\n\n" +
                 "- Comandos `/carrito`, con las variaciones de los productos (PC, Movil, Discord, Valorant) para agregar un producto al carrito de la pagina y que el cliente compre por ahi. Escoger el producto a vender\n\n" +
                 "- Comando `/link` para mostrar el link de un producto de la pagina.\n\n" +

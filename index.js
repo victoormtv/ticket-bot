@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { Client, GatewayIntentBits, REST, Routes, Collection } = require('discord.js');
+const { Client, GatewayIntentBits, Partials, REST, Routes, Collection } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 const cron = require('node-cron');
@@ -11,7 +11,13 @@ const client = new Client({
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildVoiceStates,
     GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.MessageContent
+    GatewayIntentBits.MessageContent,
+    GatewayIntentBits.GuildMessageReactions
+  ],
+  partials: [
+    Partials.Message,
+    Partials.Channel,
+    Partials.Reaction
   ]
 });
 
@@ -41,6 +47,20 @@ for (const file of eventFiles) {
     client.on(event.name, (...args) => event.execute(...args, client));
   }
 }
+
+// ========== MANEJO DE AUTOCOMPLETADO ==========
+client.on('interactionCreate', async interaction => {
+  if (interaction.isAutocomplete()) {
+    const command = client.commands.get(interaction.commandName);
+    if (!command || !command.autocomplete) return;
+
+    try {
+      await command.autocomplete(interaction);
+    } catch (error) {
+      console.error('❌ Error en autocompletado:', error);
+    }
+  }
+});
 
 // ========== SISTEMA DE AUTO-ACTUALIZACIÓN DE EMBEDS ==========
 const channelDataPath = path.join(__dirname, './data/channelData.js');
@@ -85,7 +105,6 @@ client.once('ready', async () => {
   console.log(`🤖 Bot iniciado: ${client.user.tag}`);
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
 
-  // Actualización de tasas de cambio
   console.log('💱 Actualizando tasas de cambio...');
   await actualizarTasasDeCambio();
   
@@ -93,7 +112,6 @@ client.once('ready', async () => {
     await actualizarTasasDeCambio();
   });
 
-  // Registro de comandos slash
   const commands = [];
   for (const file of commandFiles) {
     const filePath = path.join(commandsPath, file);
@@ -122,7 +140,6 @@ client.once('ready', async () => {
     console.error('❌ Error registrando comandos:', error);
   }
 
-  // Inicialización de sistemas automáticos
   const monthlyReport = require('./events/monthlyReport');
   monthlyReport(client);
 
@@ -138,7 +155,10 @@ client.once('ready', async () => {
   console.log('   ✅ Tasas de Cambio (actualización diaria)');
   console.log('   ✅ Sistema de Tickets e Inactividad');
   console.log('   ✅ Reportes Mensuales Automáticos');
+  console.log('   ✅ Sistema de Reacciones para Soporte');
+  console.log('   ✅ Sistema de Recarga de Comandos/Eventos');
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
 });
+
 
 client.login(process.env.DISCORD_TOKEN);
